@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getAsset } from "@/lib/assets";
 import { BRAND } from "@/lib/brand";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
 import { NAV_ITEMS, SERVICE_NAV_ITEMS } from "./constants";
 import { cn } from "@/lib/cn";
 import { isNavActive } from "./isActive";
@@ -70,6 +71,7 @@ export function MobileNavBar() {
               fill
               className="object-contain object-left"
               priority
+              sizes={IMAGE_SIZES.navLogoMobile}
             />
           </Link>
           <MobileMenuIcon open={open} onToggle={() => setOpen((value) => !value)} />

@@ -9,6 +9,8 @@ import {
   type GalleryItem,
 } from "@/lib/content/gallery";
 import { projektaiPage } from "@/lib/content/lino-pages/projektai";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { imageBlurProps } from "@/lib/image-props";
 import { HomeSection } from "./HomeSection";
 
 const projektaiNavLabel =
@@ -37,6 +39,7 @@ function PortfolioCard({ image, className, sizes, priority }: PortfolioCardProps
         priority={priority}
         className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         sizes={sizes}
+        {...imageBlurProps(image.image)}
       />
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 via-black/25 to-transparent"
@@ -61,25 +64,24 @@ export function ConversionGalleryPreview() {
         <div className="flex flex-col gap-2.5 sm:gap-3">
           <PortfolioCard
             image={featured}
-            priority
-            sizes="(min-width: 1440px) 1200px, 100vw"
+            sizes={IMAGE_SIZES.galleryFeatured}
             className="aspect-[4/3] w-full"
           />
 
           <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
             <PortfolioCard
               image={terrace}
-              sizes="(min-width: 1440px) 400px, 33vw"
+              sizes={IMAGE_SIZES.galleryThumb}
               className="aspect-square w-full"
             />
             <PortfolioCard
               image={shed}
-              sizes="(min-width: 1440px) 400px, 33vw"
+              sizes={IMAGE_SIZES.galleryThumb}
               className="aspect-square w-full"
             />
             <PortfolioCard
               image={frameHouse}
-              sizes="(min-width: 1440px) 400px, 33vw"
+              sizes={IMAGE_SIZES.galleryThumb}
               className="aspect-square w-full"
             />
           </div>

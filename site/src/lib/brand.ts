@@ -4,7 +4,7 @@ export const BRAND = {
   nameUpper: "LINO STATYBA",
   shortName: "Lino",
   logo: {
-    color: "/media/lino-logo.png",
+    color: "/media/lino-logo-color.svg",
     light: "/media/lino-logo-light.svg",
     watermark: "/media/lino-watermark.svg",
   },

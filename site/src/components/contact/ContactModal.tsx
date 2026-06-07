@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { getHomeFooter } from "@/lib/content/home";
 import { cn } from "@/lib/cn";
-import { lenisPreventProps } from "@/lib/scroll/lenis-prevent";
-import { useLenis } from "@/providers/LenisProvider";
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -17,7 +15,6 @@ const inputClassName =
 
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const footer = getHomeFooter();
-  const lenis = useLenis();
   const [submitted, setSubmitted] = useState(false);
 
   const handleKeyDown = useCallback(
@@ -33,16 +30,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       return;
     }
 
-    lenis?.stop();
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      lenis?.start();
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, handleKeyDown, lenis]);
+  }, [isOpen, handleKeyDown]);
 
   if (!isOpen) return null;
 
@@ -73,7 +68,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   return (
     <div
-      {...lenisPreventProps()}
       className="fixed inset-0 z-overlay overflow-y-auto overscroll-y-contain bg-[#0f1a30]/75 p-4 backdrop-blur-[2px]"
       role="dialog"
       aria-modal="true"
@@ -91,7 +85,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
       <div className="flex min-h-full items-center justify-center">
         <div
-          {...lenisPreventProps()}
           className="relative my-auto w-full max-w-[600px] rounded-2xl bg-[#faf9f7] shadow-[0_24px_64px_rgba(19,33,60,0.28)]"
           onClick={(e) => e.stopPropagation()}
         >

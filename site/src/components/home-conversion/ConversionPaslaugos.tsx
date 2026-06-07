@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getServiceCardGalleryImages } from "@/lib/content/gallery";
 import { getServiceCards, getWhereWeBuild } from "@/lib/content/home";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { imageBlurProps } from "@/lib/image-props";
 import { HomeSection } from "./HomeSection";
 
 export function ConversionPaslaugos() {
@@ -35,7 +37,8 @@ export function ConversionPaslaugos() {
                     alt={card.alt ?? image.title}
                     fill
                     className="object-cover object-center transition-transform duration-[450ms] ease-out group-hover:scale-[1.03]"
-                    sizes="(min-width: 1440px) 380px, 100vw"
+                    sizes={IMAGE_SIZES.serviceCard}
+                    {...imageBlurProps(image.image)}
                   />
                 ) : null}
 

@@ -4,10 +4,11 @@ import type { ReactNode } from "react";
 import { ContactCtaButton } from "@/components/contact/ContactCtaButton";
 import { FOOTER_SOCIAL } from "@/components/home-footer/constants";
 import { BRAND } from "@/lib/brand";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
 import { getHomeFooter } from "@/lib/content/home";
 import { FooterMapCard } from "./FooterMapCard";
 
-const FOOTER_LOGO_SRC = "/media/lino-logo-footer-dark.png";
+const FOOTER_LOGO_SRC = "/media/lino-logo-footer.svg";
 
 const COMPANY_STATEMENT = [
   "Karkasinių namų statyba nuo pamato iki rakto.",
@@ -154,12 +155,9 @@ export function ConversionKontaktaiFooter() {
                 <Image
                   src={FOOTER_LOGO_SRC}
                   alt={BRAND.name}
-                  width={2128}
-                  height={1132}
-                  className="h-[84px] w-[293px] object-contain object-left"
-                  sizes="293px"
-                  quality={95}
-                  unoptimized
+                  fill
+                  className="object-contain object-left"
+                  sizes={IMAGE_SIZES.footerLogo}
                 />
               </Link>
 

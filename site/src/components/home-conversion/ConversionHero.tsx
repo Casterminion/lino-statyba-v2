@@ -5,6 +5,8 @@ import { NAV_ITEMS } from "@/components/nav/constants";
 import { getHeroGalleryImage } from "@/lib/content/gallery";
 import { getHomeIntro } from "@/lib/content/home";
 import { projektaiPage } from "@/lib/content/lino-pages/projektai";
+import { imageBlurProps } from "@/lib/image-props";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
 
 const projectsCtaLabel =
   NAV_ITEMS.find((item) => item.href === "/projektai")?.label ?? projektaiPage.h1;
@@ -34,7 +36,8 @@ export function ConversionHero() {
             fill
             priority
             className="conversion-hero-image object-cover object-center"
-            sizes="100vw"
+            sizes={IMAGE_SIZES.hero}
+            {...imageBlurProps(poster.image)}
           />
         ) : (
           <div className="absolute inset-0 bg-[#e8e4de]" aria-hidden />

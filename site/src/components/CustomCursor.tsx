@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { cursorMotion } from "@/lib/motion";
 
 export default function CustomCursor() {
@@ -42,19 +41,17 @@ export default function CustomCursor() {
       <style jsx global>{`
         * { cursor: none !important; }
       `}</style>
-      <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-cursor mix-blend-difference"
-        animate={{
-          x: pos.x - offset,
-          y: pos.y - offset,
+      <div
+        className="pointer-events-none fixed top-0 left-0 z-cursor mix-blend-difference transition-[width,height,opacity,transform] duration-300 ease-out"
+        style={{
+          transform: `translate3d(${pos.x - offset}px, ${pos.y - offset}px, 0)`,
           width: size,
           height: size,
           opacity: visible ? 1 : 0,
         }}
-        transition={cursorMotion.transition}
       >
         <div className="h-full w-full rounded-full border border-white bg-white/20" />
-      </motion.div>
+      </div>
     </>
   );
 }

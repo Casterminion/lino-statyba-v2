@@ -1,0 +1,47 @@
+/** Auto-generated blur placeholders — run `npm run blur-placeholders` to regenerate. */
+export const IMAGE_BLUR_DATA: Record<string, string> = {
+  "/media/gallery/namu-statyba/karkasiniu-namu-statyba-01.webp": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoKAAoABUB8JYwCdAEQCQjvSgAA/Nlc+ajJBJDU8b/pM9WVLKxheQSy9Hgb/JolGkmFwAcUg0z4AAAA",
+  "/media/gallery/namu-statyba/karkasiniu-namu-statyba-02.webp": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoKAAoABUB8JaACdGuAAX66hQQAyWq3o9QaIzzxYjkGNQGgxOzCDFCkAJjW9Efh3eFMhNcAAAA=",
+  "/media/gallery/namu-statyba/karkasiniu-namu-statyba-03.webp": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoKAAoABUB8JYgCdAD8I7roAADckpTRqp7M+9+VNczNBElbQ23P3rRP2PKQAA==",
+  "/media/gallery/namu-statyba/karkasiniu-namu-statyba-04.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAgCdASoKAAoABUB8JaACdAEfBKVJnl4AAPy0hMxKD0Vf6gVUHZS5mJY4cMM1OVJ+1ajScYXgAA==",
+  "/media/gallery/namu-statyba/namu-misc-img-20231201.webp": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoKAAoABUB8JQBOgCPtXiuQAADgM7gCBo+lMRYd7TWwgLZgrCK1eyEAAAA=",
+  "/media/gallery/namu-statyba/namu-misc-viber-20231107.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoKAAgABUB8JZwAAlrbKqPnQAD+ARLjH4xHmGX+pSD1lqYQ612+kdhtoLhrxHciCL8VgAAA",
+  "/media/gallery/namu-statyba/projektas-1-01.webp": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACQAQCdASoKAAoABUB8JaAAAlLT4YAA9ph209FRLsyQJ9MtY8Au+UADd/weJhCN6AA=",
+  "/media/gallery/namu-statyba/projektas-4-01.webp": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoKAAoABUB8JbACdAC282Jf4QAA5ngVJ9FrvSho6CRYUylq/SuKwy32/qOX++VAAAA=",
+  "/media/gallery/namu-statyba/projektas-4-02.webp": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoKAAoABUB8JagCdAD8LK6lkQ8gAP3ikv0jOdjQ8VIMllNQtTQBWH1t//E3mes2q56jK4LjyzwAAA==",
+  "/media/gallery/namu-statyba/projektas-4-03.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACQAQCdASoKAAoABUB8JQBOgB5GkcAA/sGCBc0Ufd22J8ZfJOH75RorOaupnXudpsLtGtDavwAAAA==",
+  "/media/gallery/namu-statyba/projektas-4-04.webp": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoKAAoABUB8JYgCdAEOghqdv7gA/sxUTvd/ceP+JwjSCIcoIjXHTnn6OyLRD85IoEchE/xwKCYqvw7BctLjgAAA",
+  "/media/gallery/namu-statyba/projektas-4-05.webp": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoKAAoABUB8JaACdAD0Rx2+qAAA/IABXRCVWPTeIsyp6B4AGvKJwcDEFmt5tVzkUcXS5wt5OGAAAA==",
+  "/media/gallery/namu-statyba/projektas-5-01.webp": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACQAQCdASoKAAoABUB8JaACdADYAgAA/s7nUrm2vw6Uuu/Nw5QEqHNUYRlsgU4t9If6HL9SQAA=",
+  "/media/gallery/namu-statyba/projektas-5-02.webp": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoKAAoABUB8JZgC7AEfUMPuMAAA/ie5Cc0YvN8nvynt/bZhttvaVM3Pj6W21AAA",
+  "/media/gallery/namu-statyba/projektas-5-03.webp": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoKAAoABUB8JQBOgCK3b2yz2AD8JlMweMAZYfeFnkd69k5HLc9O4FZ6G/UWjBr/ZokdkrSPaAAAAA==",
+  "/media/gallery/namu-statyba/projektas-5-04.webp": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoKAAoABUB8JZACdADcCosaAAD8gwv6bo+kqXH90a/q/iusPymKlyOQgFz/zMRhX4R+ymA86YuO7E56AAA=",
+  "/media/gallery/namu-statyba/projektas-5-05.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoKAAoABUB8JbACdADJbYaYAADuz7BXRITlKuSODJ+fjJFoYFKUp3q9k6mNuqste5AAAA==",
+  "/media/gallery/namu-statyba/projektas-5-06.webp": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoKAAoABUB8JZgCdADz8QiQAAD+qDCrU56xIqZv9TjBz7QSJCeeCMltGsh7AAAA",
+  "/media/gallery/namu-statyba/projektas-5-07.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoKAAoABUB8JaACdADyggzDAAD+uTeM7CUwgXcjc31leWXcrgRJNJPgG03uUCdkYAAAAA==",
+  "/media/gallery/namu-statyba/projektas-5-08.webp": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoKAAgABUB8JagCdADdE2mtgADzwj4n/sgV3aju0NmnFLptl6QQZhjngAA=",
+  "/media/gallery/namu-statyba/projektas-6-01.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoKAAoABUB8JagC7AD7DjHEgAD+u1E4q6WhENI4RSCv/nNZUFAKuk426XEX3CnLwfGAAA==",
+  "/media/gallery/namu-statyba/projektas-6-02.webp": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoKAAoABUB8JagCdGuAAYcohMmAAMsywxckPrPC/jqfRH6uRodms8KIyz/5x8lBkkhD1UPKtAA=",
+  "/media/gallery/namu-statyba/projektas-6-03.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACQAQCdASoKAAoABUB8JagCdADXdwAA/mSzFQWhTqQdJTUOjmtmzFvB1lD98iMdbNShK+vHmCMa7AAA",
+  "/media/gallery/namu-statyba/projektas-6-04.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoKAAoABUB8JZACdAEPPCVIrgAA/q/sUbVZBlANpS3phmtCo6NHfB/NfY4ctgtqfM4vwAAA",
+  "/media/gallery/pirtys/pirtis-1.webp": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoKAAgABUB8JZwAAmg5jKAmAADeZ3xCb3a3aOVb3mjH2/ZLgrOUf1SgIeLAgAAA",
+  "/media/gallery/sandeliukai/sandeliukas-kunigiskes-01.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoIAAoABUB8JZgCdAD5hd+TxUAAzgHkwXnWywNXVj8fK4qDAX1voEExbAh8qHcHrX/l4AAA",
+  "/media/gallery/sandeliukai/sandeliukas-kunigiskes-dvigubas.webp": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoKAAoABUB8JZgCdAEQzH1oAADMiJi65OcKNbAiVGASW72/XDFBvM2Aply7Icri97LwAA==",
+  "/media/gallery/sandeliukai/sandeliukas-kunigiskes-isore.webp": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoKAAoABUB8JYgCdAEO9eoNQwAA+p+0nIjhAXaPcno5wDZKWBl6r9vzEXcQAA==",
+  "/media/gallery/sandeliukai/sandeliukas-kunigiskes-viengubas.webp": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAQAgCdASoKAAoABUB8JQBOgCHhoJ6/TIEAAP1wb3YKvwXdPTAOXQ8p7fxD68dvVKYP4zLAAAA=",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-cover.webp": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACQAQCdASoKAAoABUB8JaAAAueFcYAA3jd5tPWgbs3blWNIwCxLQJjgmOFDmpGAXmjTEaxMPeSgDd/1B8AAAA==",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-thumb.webp": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACQAQCdASoKAAoABUB8JaAAAueFcYAA3loqRRqWxJ8dt2FnfPmVFvh2Urg7gZDjcp2YkiLUrB+jAmf+oPgAAA==",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-viber-01.webp": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoKAAoABUB8JYgC7AELZN4DWPgAAP3V3WSU8BqtwgviXpxTUhGzJutOoeIDSNpAPETbfurcqn3EAA==",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-viber-02.webp": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoKAAoABUB8JYwAAupWrBw4AAD+tCvbUL5CTHu0zClJr5C6u5cj59tWiyWAGgQA",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-vidus-01.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoKAAgABUB8JZACdAEfailXqADNdfsyj4XYllFBL6M7KmyZf2u1x6phOloWIodkk5uwAAAA",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-vidus-02.webp": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAACQAQCdASoKAAgABUB8JZgCdADVgwAA+nEvOeIjK7Cm6lD9PiLsZBfRN1y1BX0AAAA=",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-vidus-03.webp": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACwAQCdASoKAAgABUB8JZACdADZaMXwAP2wxn0hNQp3+6JZEbF5GO0NlAm/AAAA",
+  "/media/gallery/sandeliukai/sandeliukas-palanga-vidus-04.webp": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoKAAgABUB8JQBOgCFmI3IAAP4hkwng63WklrWRU4g0yd4gAAA=",
+  "/media/gallery/terasos/baltramaicio-terasa-01.webp": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoKAAgABUB8JYgC7AD8sqBSAAD+0EHqQdVZ7UfbiLJSf8d0wnsCzlpN1I+AAA==",
+  "/media/gallery/terasos/baltramaicio-terasa-02.webp": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoKAAoABUB8JYgCdADcou1wAAD+QE5HMVrBCFSKTUANbArFXFQRavhIsffvaNLk/R/1XjOQAAA=",
+  "/media/gallery/terasos/baltramaicio-terasa-03.webp": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoKAAoABUB8JZgCdADp5PO7c/AA9HY2CacotyEJd8XP8W8I8rEG11Ow61jTa6GYyiHGI7wAAAA="
+} as const;
+
+export function getImageBlur(path: string): string | undefined {
+  return IMAGE_BLUR_DATA[path];
+}

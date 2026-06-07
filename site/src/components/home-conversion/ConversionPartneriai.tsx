@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PRESS_LOGOS_DESKTOP, type PressLogoSpec } from "@/components/home-footer/constants";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
 import { HomeSection } from "./HomeSection";
 
 const LOGO_CELL =
@@ -7,9 +8,9 @@ const LOGO_CELL =
 
 /** JPG/PNG assets with baked-in light backgrounds — multiply hides them on white. */
 const LIGHT_BG_LOGOS = new Set([
-  "/media/lino-partners/medzio-bites-logo.png",
-  "/media/lino-partners/legnoline-logo.jpg",
-  "/media/lino-partners/reburnent.jpg",
+  "/media/lino-partners/medzio-bites-logo.webp",
+  "/media/lino-partners/legnoline-logo.webp",
+  "/media/lino-partners/reburnent.webp",
 ]);
 
 const LOGO_MUTED =
@@ -25,7 +26,7 @@ function PartnerLogo({ logo }: { logo: PressLogoSpec }) {
       alt={logo.alt}
       fill
       className={imageClassName}
-      sizes="168px"
+      sizes={IMAGE_SIZES.partnerLogo}
     />
   );
 

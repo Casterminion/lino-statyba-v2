@@ -3,6 +3,8 @@ import { HomeSection } from "@/components/home-conversion/HomeSection";
 import { cn } from "@/lib/cn";
 import { getGalleryItemById } from "@/lib/content/gallery";
 import type { ServiceStoryBlock } from "@/lib/content/service-pages";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { imageBlurProps } from "@/lib/image-props";
 
 type ServiceProjectStoryProps = {
   blocks: ServiceStoryBlock[];
@@ -31,7 +33,8 @@ function StoryBlock({
             alt={block.imageAlt}
             fill
             className="object-cover object-center"
-            sizes="(min-width: 1440px) 580px, 100vw"
+            sizes={IMAGE_SIZES.storyImage}
+            {...imageBlurProps(image.image)}
           />
         ) : null}
       </div>

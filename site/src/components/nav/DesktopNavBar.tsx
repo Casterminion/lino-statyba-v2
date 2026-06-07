@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { getAsset } from "@/lib/assets";
 import { BRAND } from "@/lib/brand";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
 import { NavStack } from "@/components/layout/NavStack";
 import { NAV_ITEMS } from "./constants";
 import { isNavActive } from "./isActive";
@@ -28,6 +29,7 @@ export function DesktopNavBar() {
             fill
             className="object-contain object-left"
             priority
+            sizes={IMAGE_SIZES.navLogoDesktop}
           />
         </Link>
 

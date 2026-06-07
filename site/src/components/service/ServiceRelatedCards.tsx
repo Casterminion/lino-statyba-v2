@@ -3,6 +3,8 @@ import Link from "next/link";
 import { HomeSection } from "@/components/home-conversion/HomeSection";
 import { getGalleryItemById } from "@/lib/content/gallery";
 import type { ServiceRelatedItem } from "@/lib/content/service-pages";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { imageBlurProps } from "@/lib/image-props";
 
 type ServiceRelatedCardsProps = {
   items: ServiceRelatedItem[];
@@ -31,7 +33,8 @@ export function ServiceRelatedCards({ items, title = "Paslaugos" }: ServiceRelat
                     alt={item.imageAlt}
                     fill
                     className="object-cover object-center transition-transform duration-[450ms] ease-out group-hover:scale-[1.03]"
-                    sizes="(min-width: 1440px) 580px, 100vw"
+                    sizes={IMAGE_SIZES.storyImage}
+                    {...imageBlurProps(image.image)}
                   />
                 ) : null}
 

@@ -103,11 +103,6 @@ export const cursorMotion = {
 
 export const scrollHeadingOffset = "-50%";
 
-export const lenis = {
-  intensity: 10,
-  duration: 1.0,
-} as const;
-
 export function reducedMotion<T>(value: T, fallback: T): T {
   if (typeof window === "undefined") return value;
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? fallback : value;

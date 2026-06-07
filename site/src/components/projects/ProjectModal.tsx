@@ -8,7 +8,8 @@ import {
   photoCountLabel,
   type Project,
 } from "@/lib/content/projects";
-import { lenisPreventProps } from "@/lib/scroll/lenis-prevent";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { imageBlurProps } from "@/lib/image-props";
 
 type ProjectModalProps = {
   project: Project | null;
@@ -62,10 +63,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const typeLabel = getProjectTypeLabel(project.category);
   const countLabel = photoCountLabel(project.imageCount);
   const hasMultiple = project.imageCount > 1;
+  const activeImage = project.images[activeIndex];
 
   return (
     <div
-      {...lenisPreventProps()}
       className={cn(
         "project-modal-backdrop fixed inset-0 z-overlay flex flex-col backdrop-blur-[6px]",
         visible && "project-modal-backdrop--visible",
@@ -102,21 +103,19 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         <div className="relative min-h-0 flex-1">
           <div className="absolute inset-0 flex items-center justify-center px-3 pt-16 pb-24 wide:px-6 wide:pt-20 wide:pb-28 desktop:px-6 desktop:pt-20 desktop:pb-28">
-            {project.images.map((image, index) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={image.id}
-                src={image.image}
-                alt={image.title}
+            <div className="relative h-[calc(100vh-10.5rem)] w-[min(88vw,1320px)]">
+              <Image
+                key={activeImage.id}
+                src={activeImage.image}
+                alt={activeImage.title}
+                fill
+                priority
                 draggable={false}
-                className={cn(
-                  "project-modal-image absolute top-1/2 left-1/2 max-h-[calc(100vh-10.5rem)] max-w-[min(88vw,1320px)] -translate-x-1/2 -translate-y-1/2 object-contain",
-                  index === activeIndex
-                    ? "project-modal-image--active z-[1]"
-                    : "pointer-events-none z-0",
-                )}
+                className="project-modal-image project-modal-image--active object-contain"
+                sizes={IMAGE_SIZES.modalMain}
+                {...imageBlurProps(activeImage.image)}
               />
-            ))}
+            </div>
           </div>
 
           {hasMultiple ? (
@@ -173,7 +172,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     alt={image.title}
                     fill
                     className="object-cover object-center"
-                    sizes="52px"
+                    sizes={IMAGE_SIZES.modalThumb}
+                    {...imageBlurProps(image.image)}
                   />
                 </button>
               ))}

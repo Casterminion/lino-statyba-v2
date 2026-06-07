@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { ContactCtaButton } from "@/components/contact/ContactCtaButton";
 import { getGalleryItemById } from "@/lib/content/gallery";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { imageBlurProps } from "@/lib/image-props";
 
 type ServiceHeroProps = {
   headline: string;
@@ -27,7 +29,8 @@ export function ServiceHero({ headline, subhead, imageId, imageAlt, ctaLabel }: 
             fill
             priority
             className="conversion-hero-image object-cover object-center"
-            sizes="100vw"
+            sizes={IMAGE_SIZES.hero}
+            {...imageBlurProps(image.image)}
           />
         ) : (
           <div className="absolute inset-0 bg-[#e8e4de]" aria-hidden />

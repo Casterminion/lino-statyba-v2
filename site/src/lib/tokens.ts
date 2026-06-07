@@ -12,8 +12,6 @@ import { linoBrandColors } from "./brand-tokens";
 
 import { BREAKPOINTS, MEDIA } from "./breakpoints";
 
-import { lenis } from "./motion";
-
 import { fonts, typeScale } from "./typography";
 
 
@@ -125,14 +123,6 @@ export const tokens = {
     pageMaxWide: "1492px",
 
     pageMaxDesktop: "1440px",
-
-  },
-
-  motion: {
-
-    lenisDuration: lenis.duration,
-
-    lenisIntensity: lenis.intensity,
 
   },
 

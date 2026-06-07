@@ -1,16 +1,15 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { ContactModalProvider } from "@/providers/ContactModalProvider";
-import { LenisProvider } from "@/providers/LenisProvider";
-import CustomCursor from "./CustomCursor";
+
+const CustomCursor = dynamic(() => import("./CustomCursor"), { ssr: false });
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <LenisProvider>
-      <ContactModalProvider>
-        <CustomCursor />
-        {children}
-      </ContactModalProvider>
-    </LenisProvider>
+    <ContactModalProvider>
+      <CustomCursor />
+      {children}
+    </ContactModalProvider>
   );
 }

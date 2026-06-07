@@ -63,7 +63,7 @@ export type PressLogoSpec = {
 /** Inventory §1 partner logos — desktop order. */
 export const PRESS_LOGOS_DESKTOP: PressLogoSpec[] = [
   {
-    path: "/media/lino-partners/daisera.png",
+    path: "/media/lino-partners/daisera.webp",
     alt: "daisera",
     href: "https://daisera.lt/",
     objectFit: "contain",
@@ -71,7 +71,7 @@ export const PRESS_LOGOS_DESKTOP: PressLogoSpec[] = [
     height: 104,
   },
   {
-    path: "/media/lino-partners/medzio-bites-logo.png",
+    path: "/media/lino-partners/medzio-bites-logo.webp",
     alt: "Medzio-Bites-logo",
     href: "https://www.medziobites.lt/",
     objectFit: "contain",
@@ -79,7 +79,7 @@ export const PRESS_LOGOS_DESKTOP: PressLogoSpec[] = [
     height: 100,
   },
   {
-    path: "/media/lino-partners/legnoline-logo.jpg",
+    path: "/media/lino-partners/legnoline-logo.webp",
     alt: "Legnoline logo",
     href: "https://legnoline.lt/",
     objectFit: "contain",
@@ -87,7 +87,7 @@ export const PRESS_LOGOS_DESKTOP: PressLogoSpec[] = [
     height: 93,
   },
   {
-    path: "/media/lino-partners/reburnent.jpg",
+    path: "/media/lino-partners/reburnent.webp",
     alt: "reburnent",
     href: "https://reburnentpro.com/",
     objectFit: "contain",
@@ -95,7 +95,7 @@ export const PRESS_LOGOS_DESKTOP: PressLogoSpec[] = [
     height: 90,
   },
   {
-    path: "/media/lino-partners/bauen.png",
+    path: "/media/lino-partners/bauen.webp",
     alt: "bauen",
     href: "https://www.bauen.lt/",
     objectFit: "contain",
@@ -115,7 +115,7 @@ export const PRESS_LOGOS_DESKTOP: PressLogoSpec[] = [
 /** Inventory §1 partner logos — mobile order. */
 export const PRESS_LOGOS_MOBILE: PressLogoSpec[] = [
   {
-    path: "/media/lino-partners/daisera.png",
+    path: "/media/lino-partners/daisera.webp",
     alt: "daisera",
     href: "https://daisera.lt/",
     objectFit: "contain",
@@ -123,7 +123,7 @@ export const PRESS_LOGOS_MOBILE: PressLogoSpec[] = [
     height: 70,
   },
   {
-    path: "/media/lino-partners/medzio-bites-logo.png",
+    path: "/media/lino-partners/medzio-bites-logo.webp",
     alt: "Medzio-Bites-logo",
     href: "https://www.medziobites.lt/",
     objectFit: "contain",
@@ -131,7 +131,7 @@ export const PRESS_LOGOS_MOBILE: PressLogoSpec[] = [
     height: 70,
   },
   {
-    path: "/media/lino-partners/legnoline-logo.jpg",
+    path: "/media/lino-partners/legnoline-logo.webp",
     alt: "Legnoline logo",
     href: "https://legnoline.lt/",
     objectFit: "contain",
@@ -139,7 +139,7 @@ export const PRESS_LOGOS_MOBILE: PressLogoSpec[] = [
     height: 70,
   },
   {
-    path: "/media/lino-partners/reburnent.jpg",
+    path: "/media/lino-partners/reburnent.webp",
     alt: "reburnent",
     href: "https://reburnentpro.com/",
     objectFit: "contain",
@@ -147,7 +147,7 @@ export const PRESS_LOGOS_MOBILE: PressLogoSpec[] = [
     height: 70,
   },
   {
-    path: "/media/lino-partners/bauen.png",
+    path: "/media/lino-partners/bauen.webp",
     alt: "bauen",
     href: "https://www.bauen.lt/",
     objectFit: "contain",

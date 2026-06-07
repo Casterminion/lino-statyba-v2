@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
 
 type FooterMapCardProps = {
   address: string;
@@ -39,7 +40,7 @@ export function FooterMapCard({ address, variant = "desktop" }: FooterMapCardPro
         alt={`MB Lino statyba biuro vieta: ${address}`}
         fill
         className="object-cover object-center"
-        sizes={isMobile ? "100vw" : "(min-width: 1440px) 560px, 50vw"}
+        sizes={isMobile ? IMAGE_SIZES.footerMapMobile : IMAGE_SIZES.footerMapDesktop}
         priority={false}
       />
 

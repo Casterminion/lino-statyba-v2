@@ -7,6 +7,8 @@ import {
   photoCountLabel,
   type Project,
 } from "@/lib/content/projects";
+import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { imageBlurProps } from "@/lib/image-props";
 import { ProjectModal } from "./ProjectModal";
 
 type ProjectsGridProps = {
@@ -34,7 +36,8 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
               alt={project.images[0]?.title ?? getProjectTypeLabel(project.category)}
               fill
               className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              sizes="(min-width: 1440px) 380px, (min-width: 768px) 50vw, 100vw"
+              sizes={IMAGE_SIZES.projectCard}
+              {...imageBlurProps(project.coverImage)}
             />
 
             <div
