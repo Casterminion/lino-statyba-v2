@@ -6,7 +6,7 @@ import { getHeroGalleryImage } from "@/lib/content/gallery";
 import { getHomeIntro } from "@/lib/content/home";
 import { projektaiPage } from "@/lib/content/lino-pages/projektai";
 import { imageBlurProps } from "@/lib/image-props";
-import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { HERO_IMAGE_QUALITY, IMAGE_SIZES } from "@/lib/image-sizes";
 
 const projectsCtaLabel =
   NAV_ITEMS.find((item) => item.href === "/projektai")?.label ?? projektaiPage.h1;
@@ -37,6 +37,7 @@ export function ConversionHero() {
             priority
             className="conversion-hero-image object-cover object-center"
             sizes={IMAGE_SIZES.hero}
+            quality={HERO_IMAGE_QUALITY}
             {...imageBlurProps(poster.image)}
           />
         ) : (

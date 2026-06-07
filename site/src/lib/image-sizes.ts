@@ -1,4 +1,5 @@
-/** Realistic `sizes` values — aligned to 1200px content width and layout breakpoints. */
+/** Next/Image quality for full-bleed heroes — tuned to ~same bytes as q=75 at 1920 via 1600w cap. */
+export const HERO_IMAGE_QUALITY = 84;
 export const IMAGE_SIZES = {
   hero: "100vw",
   galleryFeatured: "(min-width: 1440px) 1200px, 100vw",

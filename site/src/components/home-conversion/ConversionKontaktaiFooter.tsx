@@ -8,7 +8,7 @@ import { IMAGE_SIZES } from "@/lib/image-sizes";
 import { getHomeFooter } from "@/lib/content/home";
 import { FooterMapCard } from "./FooterMapCard";
 
-const FOOTER_LOGO_SRC = "/media/lino-logo-footer.svg";
+const FOOTER_LOGO_SRC = "/media/lino-logo-footer-dark.png";
 
 const COMPANY_STATEMENT = [
   "Karkasinių namų statyba nuo pamato iki rakto.",
@@ -155,8 +155,9 @@ export function ConversionKontaktaiFooter() {
                 <Image
                   src={FOOTER_LOGO_SRC}
                   alt={BRAND.name}
-                  fill
-                  className="object-contain object-left"
+                  width={2128}
+                  height={1132}
+                  className="h-[84px] w-[293px] object-contain object-left"
                   sizes={IMAGE_SIZES.footerLogo}
                 />
               </Link>

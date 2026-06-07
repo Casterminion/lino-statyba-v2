@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ROOT = path.join(__dirname, "..");
-const LOGO_LIGHT_SOURCE = path.join(ROOT, "public/media/lino-logo-color.svg");
+const LOGO_LIGHT_SOURCE = path.join(ROOT, "public/media/lino-logo.png");
 const LOGO_DARK_SOURCE = path.join(ROOT, "public/media/lino-logo-light.svg");
 const LIGHT_BG = { r: 255, g: 255, b: 255, alpha: 1 };
 const DARK_BG = { r: 19, g: 33, b: 60, alpha: 1 };
