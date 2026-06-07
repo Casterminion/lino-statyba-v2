@@ -1,0 +1,812 @@
+{
+  "name": "Lino Statyba",
+  "tagline": "Luxury Construction in Park City & the Wasatch Back",
+  "location": "Park City, Utah",
+  "email": "info@vitruviusbuilt.com",
+  "phone": "(435) 200-2442",
+  "address": "1310 Prospector Ave, Park City, UT 84060",
+  "social": {
+    "instagram": "https://www.instagram.com/mblstatyba/",
+    "facebook": "https://www.facebook.com/p/Mb-Lino-Statyba-100076127300338/",
+    "linkedin": "https://www.linkedin.com/company/vitruvius-built/",
+    "houzz": "https://www.houzz.com/pro/vitruviusbuilt"
+  },
+  "communities": [
+    "Park City",
+    "Deer Valley",
+    "Promontory",
+    "Tuhaye",
+    "Victory Ranch",
+    "The Colony",
+    "Deer Crest",
+    "Powder Mountain",
+    "Old Town",
+    "Marcella"
+  ],
+  "pages": {
+    "home": {
+      "slug": "home",
+      "title": "APIE MUS - Lino Statyba",
+      "description": "MB Lino statyba \u2013 \u012fmon\u0117, gaminanti ekonomi\u0161kus ir tvarius A++ klas\u0117s karkasinius/ skydinius namus nuo pamato iki rakto, taip pat sand\u0117liukus ir pirtis.",
+      "sections": {
+        "intro": {
+          "eyebrow": "",
+          "title": "Apie mus",
+          "body": "MB Lino statyba \u2013 \u012fmon\u0117,\u00a0 gaminanti ekonomi\u0161kus ir tvarius A++ klas\u0117s karkasinius/ skydinius namus nuo pamato iki rakto, taip pat sand\u0117liukus\u00a0ir pirtis. Mus renkasi ekologi\u0161kai atsakingi ir \u012f energijos efektyvum\u0105 orientuoti klientai, norintys suma\u017einti ilgalaikes eksploatavimo i\u0161laidas.",
+          "summary": "MB Lino statyba \u2013 \u012fmon\u0117, gaminanti ekonomi\u0161kus ir tvarius A++ klas\u0117s karkasinius/ skydinius namus nuo pamato iki rakto, taip pat sand\u0117liukus ir pirtis."
+        },
+        "overlapDetailing": {
+          "panels": [
+            {
+              "title": "Kas yra tvari statyba?",
+              "body": "Tvari statyba yra metod\u0173 ir sprendim\u0173 visuma, skirta statyti pastatus taip, kad jie kuo ma\u017eiau kenkt\u0173 aplinkai, b\u016bt\u0173 energijos ir i\u0161tekli\u0173 taup\u016bs bei ilgaam\u017eiai. \u0160i koncepcija remiasi ekologijos, ekonomikos ir socialin\u0117s atsakomyb\u0117s principais, siekiant u\u017etikrinti, kad statybos procesai ir galutinis produktas b\u016bt\u0173 darn\u016bs su gamta ir naudingi \u017emon\u0117ms."
+            },
+            {
+              "title": "Kod\u0117l verta rinktis m\u016bs\u0173 paslaugas?",
+              "body": "M\u016bs\u0173 komanda turi ilgamet\u0119 patirt\u012f ir gilias \u017einias statyb\u0173 srityje. Esame \u012fgyvendin\u0119 daugyb\u0119 s\u0117kming\u0173 projekt\u0173, tod\u0117l galite mumis pasitik\u0117ti. Dirbame su patikimais partneriais, tiekian\u010diais kokybi\u0161kas statybos procesui naudojamas med\u017eiagas. Kiekvien\u0105 projekt\u0105 vykdome precizi\u0161kai, u\u017etikrindami, kad rezultatas atitiks j\u016bs\u0173 l\u016bkes\u010dius. Esame \u012fsipareigoj\u0119 statyti tvariai ir r\u016bpintis aplinka. M\u016bs\u0173 sprendimai \u2013 draugi\u0161ki gamtai ir ekonomi\u0161ki. Renkam\u0117s tik sertifikuotas, aplinkai draugi\u0161kas med\u017eiagas. Dirbdami laikom\u0117s auk\u0161t\u0173 aplinkosaugos standart\u0173. Kiekvienam klientui si\u016blome individualius sprendimus, atitinkan\u010dius jo poreikius ir biud\u017eet\u0105. Esame lankst\u016bs ir pasiruo\u0161\u0119 prisitaikyti prie j\u016bs\u0173 poreiki\u0173, kad galutinis rezultatas b\u016bt\u0173 tobulas. M\u016bs\u0173 tikslas \u2013 sukurti produkt\u0105 ar paslaug\u0105, kuri visi\u0161kai atitikt\u0173 j\u016bs\u0173 vizij\u0105. Si\u016blome konkurencingas kainas, u\u017etikrindami geriausi\u0105 kainos ir kokyb\u0117s santyk\u012f. Pateikiame i\u0161sami\u0105 s\u0105mat\u0105 ir detali\u0105 projekto vykdymo eig\u0105."
+            }
+          ]
+        },
+        "features": {
+          "panels": [
+            {
+              "title": "Luxury Residential Construction, Executed with Precision",
+              "body": "We focus exclusively on high-end residential construction. Every home we build is shaped by rigorous planning, deep construction knowledge, and a commitment to quality that extends far beyond completion."
+            },
+            {
+              "title": "Building in Mountain Environments",
+              "body": "Building in mountain environments requires more than craftsmanship\u2014it demands experience, foresight, and technical discipline. Our work frequently involves steep terrain, complex foundations, challenging access, and sensitive site conditions."
+            }
+          ]
+        },
+        "carousel": {
+          "heading": "Explore our projects. From Completed to taking form",
+          "projectSlugs": [
+            "cloudveil",
+            "ridgeway",
+            "empire-pass-chalet",
+            "gemini",
+            "a-frame",
+            "twin-peaks-hideaway",
+            "bison-bluff",
+            "alpenglow",
+            "telios",
+            "eagles-nest",
+            "axis",
+            "quarry-mountain",
+            "painted-bluff",
+            "niseko",
+            "bowrock",
+            "hail-peak",
+            "glenwild-preserve"
+          ]
+        },
+        "whereWeBuild": {
+          "title": "Paslaugos",
+          "body": "Tai greita, ekonomi\u0161ka ir tvari statybos technologija, kurios metu pastato karkasas yra\u00a0gaminamas i\u0161 sertifikuotos medienos, o sienos surenkamos i\u0161 anksto paruo\u0161t\u0173 skyd\u0173. \u0160is\u00a0metodas leid\u017eia sukurti lengvus, ta\u010diau tvirtus ir energij\u0105 taupan\u010dius pastatus.",
+          "serviceCards": [
+            {
+              "label": "KARKASINI\u0172 \u2013 SKYDINI\u0172 NAM\u0172 STATYBA",
+              "cta": "Daugiau",
+              "href": "/karkasiniu-skydiniu-namu-statyba/",
+              "alt": "karkasas-2 namu kat."
+            },
+            {
+              "label": "KARKASINIAI SAND\u0116LIUKAI",
+              "cta": "Daugiau",
+              "href": "/karkasiniai-sandeliukai/",
+              "alt": "Terasa prie namu kategorijos"
+            },
+            {
+              "label": "KARKASIN\u0116S PIRTYS",
+              "cta": "Daugiau",
+              "href": "/karkasines-pirtys/",
+              "alt": "vidaus apdaila 5"
+            }
+          ],
+          "communities": [
+            "Park City",
+            "Deer Valley",
+            "Promontory",
+            "Tuhaye",
+            "Victory Ranch",
+            "The Colony",
+            "Deer Crest",
+            "Powder Mountain",
+            "Old Town",
+            "Marcella"
+          ]
+        },
+        "press": {
+          "logos": [
+            {
+              "id": "partner-daisera",
+              "role": "press-logo",
+              "path": "/media/lino-partners/daisera.png",
+              "section": "as-seen-in"
+            },
+            {
+              "id": "partner-medzio-bites",
+              "role": "press-logo",
+              "path": "/media/lino-partners/medzio-bites-logo.png",
+              "section": "as-seen-in"
+            },
+            {
+              "id": "partner-legnoline",
+              "role": "press-logo",
+              "path": "/media/lino-partners/legnoline-logo.jpg",
+              "section": "as-seen-in"
+            },
+            {
+              "id": "partner-reburnent",
+              "role": "press-logo",
+              "path": "/media/lino-partners/reburnent.jpg",
+              "section": "as-seen-in"
+            },
+            {
+              "id": "partner-bauen",
+              "role": "press-logo",
+              "path": "/media/lino-partners/bauen.png",
+              "section": "as-seen-in"
+            },
+            {
+              "id": "partner-essve",
+              "role": "press-logo",
+              "path": "/media/lino-partners/essve-logo.webp",
+              "section": "as-seen-in"
+            }
+          ]
+        },
+        "footer": {
+          "faqsHeading": "Dažniausiai užduodami klausimai",
+          "projectsHeading": "Projects",
+          "projectsBody": "Did\u017eiausi\u0105 d\u0117mes\u012f skiriame med\u017eiag\u0173 kokybei ir tvarumui. Dirbame su patikimais partneriais, tiekian\u010diais med\u017eiagas, reikalingas statybos procese, kurios atitinka m\u016bs\u0173 \u012fmon\u0117s keliamus kokyb\u0117s standartus. Visi gamybos procesai atliekami dirbtuv\u0117se. ,,LINO STATYBA\u201c komandoje dirba \u017emon\u0117s, turintys ilg\u0105 darbo patirt\u012f skandinavi\u0161ko stiliaus karkasini\u0173, skydini\u0173 nam\u0173 gamyboje, bei montavime. Savo klientams, galime pasi\u016blyti auk\u0161\u010diausi\u0105 atliekam\u0173 darb\u0173 kokyb\u0119, bei u\u017etikrinti atlikt\u0173 darb\u0173 ilgaam\u017ei\u0161kum\u0105.\u00a0 Si\u016blome naujausius technologinius ir konstrukcinius sprendimus, kas leid\u017eia klientui u\u017etikrinti ilgalaik\u0119 garantij\u0105.",
+          "phone": "+370 676 77272",
+          "email": "info@linostatyba.lt",
+          "address": "Vasario 16-osios g. 32, Telei\u010diai, 53214 Kauno r. sav.",
+          "privacyLabel": "Privatumo politika",
+          "privacyHref": "/privatumo-politika",
+          "contactLabel": "Kontaktai",
+          "contactHref": "/kontaktai",
+          "copyright": "\u00a9 linostatyba.lt 2026. Visos teis\u0117s saugomos.",
+          "createdByLabel": "Suk\u016brta webinteli.lt",
+          "createdByHref": "https://webinteli.lt"
+        }
+      }
+    },
+    "company": {
+      "slug": "company",
+      "title": "Company",
+      "description": "Vitruvius Built is a luxury residential construction firm based in Park City, Utah.  We partner with discerning clients and leading architecture and design firms to deliver precision-driven construction of architecturally significant mountain homes.",
+      "intro": "At Vitruvius Built, we want the details that define our experience to be unreasonable, creating meticulously crafted moments that elevate every decision, conversation, and outcome. Guided by an evolved understanding of emotional and executional intelligence, we partner with clients to create a transformative process as extraordinary as the home itself, elevating the experience of building luxury homes. For us, true luxury is not only in the finished home, but in the journey that gets you there.",
+      "mission": "Founded on a culture of innovation, fueled by a tireless work ethic and a relentless pursuit of greatness, Vitruvius Built is committed to defining the luxury build experience through a team and culture rooted in curiosity, authenticity, and an evolved understanding of luxury. The strength of our team is each individual member. The strength of each member is the team.",
+      "teamMembers": [
+        {
+          "name": "Charles",
+          "role": "Founder + CEO",
+          "bio": "Charles is the Founder+CEO of Vitruvius Built, a luxury construction firm based in Park City, UT. With over 20 years of experience, he has led transformative projects that seamlessly blend visionary design, meticulous construction, and elevated luxury. Since entering real estate development in 2005, Charles has delivered iconic luxury residential and commercial properties in New Orleans, Nassau, Exuma Islands, and Park City.",
+          "image": "/media/KYLlUZSS2ILGCzEtJenPJsyII.png"
+        },
+        {
+          "name": "Patrick",
+          "role": "Team",
+          "bio": "Patrick has extensive experience in luxury residential construction over the past decade. He relishes the opportunity to execute at the highest level and has accrued an extensive level of experience during his career. He is an excellent communicator, and his positive energy is felt both in the office and on the job sites. In his free time, Patrick loves all things outdoors. He especially enjoys fly fishing on the Provo and Weber Rivers and taking backcountry hikes with friends and family.",
+          "image": "/media/SujMPQtoIrL9xfTnd8cix9Ag.png"
+        },
+        {
+          "name": "Devin Gillette",
+          "role": "VP, Business Development",
+          "bio": "Devin Gillette is the Vice President of Business Development at Vitruvius Built, bringing a lifelong foundation in the custom home industry and nearly two decades of local experience in Park City. Having lived in Park City for 18 years and grown up in the luxury residential construction industry, she offers a rare combination of market knowledge, builder fluency, and client-facing leadership.",
+          "image": "/media/Ofd1mRW0bTvTetGkXtf8CHy9dU.png"
+        }
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/KYLlUZSS2ILGCzEtJenPJsyII.png",
+        "/media/SujMPQtoIrL9xfTnd8cix9Ag.png",
+        "/media/Ofd1mRW0bTvTetGkXtf8CHy9dU.png",
+        "/media/X92OlY87OWqxAIxKsIx5bUkepE.png",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png"
+      ]
+    },
+    "contact": {
+      "slug": "contact",
+      "title": "Contact",
+      "description": "Contact us",
+      "intro": "Contact us",
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/rDOcjZeH4DtuVwtIgcHS6rjRt68.jpg",
+        "/media/b7jLRxcTSBBUZAsdoyM6aWXHek.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg"
+      ]
+    },
+    "media": {
+      "slug": "media",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "headings": [],
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/JJ9W9uqW93yY4AF4Ogn6IfvX8k.jpeg",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/CIJz8jY5gxoxFzxPtKGIxpRc21s.png",
+        "/media/BXRC6N1Mv8hmVHBTj6XjUvAtyeU.png",
+        "/media/Ou8rECIxDggWlm0WVAd4EiSQIk.jpeg",
+        "/media/v7YbX9UChFXKrEGQTwZ6At3dKY.png",
+        "/media/idAn7NfHoph2Oc52zp781JCP3k.png",
+        "/media/ctviMPuogb1GkhVbslVvU1KNrI.png",
+        "/media/0dMM1z6YXu3I8zRudS4b8jkw.jpg",
+        "/media/1rfqXiOFOwo2r6nSKrm8A00AoY.png",
+        "/media/ki7VziSAISKmu8vNzXUEQ4oI9s.png",
+        "/media/zMPmHxqvNrrTtcdz7iUImYmIqcg.png",
+        "/media/HmONslY4jg6qHnK7ZOmevavZ8s.png",
+        "/media/ME1SWkGJ26KYt19tZYj3OFRjAkY.png",
+        "/media/NUkJwJYWtnu7RGxx3lZ1sS9cX78.png",
+        "/media/fPgZGLppTi8uUIruMV9sBQfwRtg.png",
+        "/media/t59eGGeOiOdbcKlg0gvsNyDKA.png",
+        "/media/o9cCUIzJUyCCDFewr15gYuVSb4.png",
+        "/media/mllY1KRsggJLX3sKHwAN7hQ5Ls.png",
+        "/media/a09oBkolW7IQDhQsOVQ46ItakAY.png",
+        "/media/8CC2v0jMojkzkYafJOhbOmSXQ.png",
+        "/media/ycvB2fnXGQrqpAEqpKrQfcDf9So.jpg",
+        "/media/zly3FuXZdhKkaOoeZkaFXB50c.jpg",
+        "/media/16UhpLTgMiXjNOVW3eybDCxKPzU.jpg"
+      ]
+    },
+    "faqs": {
+      "slug": "faqs",
+      "title": "FAQs",
+      "description": "At Vitruvius Built, we approach custom home building with an abundance mentality. Empowering our clients through clarity, transparency, and informed decision-making. The best homes are built when the right questions are encouraged and answered with care.",
+      "headings": [],
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/iWC9uVQlHnfazgZVzBE8XI1YKU.jpg",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png"
+      ]
+    },
+    "privacy-policy": {
+      "slug": "privacy-policy",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "headings": [],
+      "paragraphs": [],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg"
+      ]
+    },
+    "projects": {
+      "slug": "projects",
+      "title": "Projects",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "intro": "Poised within the exclusive Dancing Sun neighborhood of Tuhaye, Cloudveil is a 5,820-square-foot statement of elevated living \u2014 a refined mountain retreat where modern architecture, rich materiality, and natural serenity converge. With four bedrooms, four and a half bathrooms, and a design that embraces both comfort and sophistication, Cloudveil delivers a deeply personal take on luxury. The interiors reflect a masculine, modern aesthetic, marked by clean lines, grounded textures, and a restrained elegance. Anchoring the home is a dramatic open-concept living area, where custom Burchette & Burchette wood flooring sets the tone for timeless quality underfoot. Expansive glazing brings in filtered mountain light, evoking the home's namesake \u2014 soft, shifting veils of cloud that dance across the landscape. Bespoke lighting and tailored finishes amplify the home\u2019s curated ambiance. For the wellness-minded, Cloudveil features a private spa sanctuary, complete with a custom sauna designed to soothe and restore. A dedicated golf simulator suite offers both leisure and precision, while generous gathering spaces \u2014 both indoors and out \u2014 encourage year-round entertaining. Fire features, intimate lounges, and mountain views make every moment immersive. Thoughtful details include an integrated smart lighting system, luxurious bath fixtures, and handcrafted millwork throughout \u2014 all chosen to enhance both the daily rhythm and the visual serenity of the home. Cloudveil is more than a home. It is a high-altitude haven \u2014 a quiet, powerful presence nestled in the Wasatch, where every element is designed not just to impress, but to endure.",
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/WIXf9C0o7dhearF7SPcsHJODOvU.jpg",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png",
+        "/media/mUWXgtAVZqrn9FF60sxnd0TtwE.jpg",
+        "/media/AokYozXtYjkw54OfVMNvgUJ9c.jpg",
+        "/media/MNYisYD8dxXcqkOqe0q8tocuOk.jpg",
+        "/media/rDOcjZeH4DtuVwtIgcHS6rjRt68.jpg",
+        "/media/tewxYZpTEkAH2ASoLJUjrDHnIQk.jpg",
+        "/media/8S51mkosgWgXkfQw05Vn9hNf4.jpg",
+        "/media/1jAOi7S5UZBBhSnfoFisTg6g.jpg",
+        "/media/APS65vrDvhumxaj2Xn6HTmyEik.jpg",
+        "/media/TYDxiD0NMpiIeq6QTNQeYDIqY.jpg",
+        "/media/ubC2auLlFDU7H0crZfdgrCiytI.jpg",
+        "/media/y8B9szaOKEWizbJMeJ3BD6uUI0.jpg",
+        "/media/x4aIn0AjO5FsJbRB8qriLpA7s.jpg",
+        "/media/47dSJAaGSPXYp0zR7hXz75ct3g.jpg",
+        "/media/rVJqrLNOkstzkUBDXgtw3wqz0c.jpg",
+        "/media/8VxhhabXun2EFw6yQN3aytL2rQA.jpg",
+        "/media/vk73xNnCAHdRJwIh5JXLXthJsp4.jpg",
+        "/media/v4eUFDbF0EhjqWQmWomX86LkXs4.jpg",
+        "/media/vMT5nW5C4PsbCkApbaddQuI5E.jpg",
+        "/media/hc9aE4kWkC5tjvK8kVMyX8NzNs.jpg",
+        "/media/sbXXCwGyV3VAKHN3m4FVun39Hps.jpg",
+        "/media/BiCm60IywY77EiVKKagT6CoTD0.jpg",
+        "/media/4TipHISwRp6AxN8TPoU7egqiPY.jpg",
+        "/media/VdBHNr9JtvU2kNwFyRnoIyZoMA.jpg",
+        "/media/eOCYDnSzWTLA4m63IS0TqyvwU.jpg",
+        "/media/9HteQF4dZblx52rzU0hGEsIB8U.jpg",
+        "/media/xDV2QUftgk3nXXBuy76vWTTWJU.jpg",
+        "/media/qv8f7DHSQ7XKr04MhAyOBWIYo.jpg",
+        "/media/A5BwiQOW1ZgS8VAHtS3qMxx6Ck.jpg",
+        "/media/9NkMjoPRdi09ykf75vW2NbdJPHY.jpg",
+        "/media/xYocVOdS8qo5Og72vQmqy7psaQg.jpg",
+        "/media/gQnHjquYCOAcDPybcSG9qxi14fM.jpg",
+        "/media/NX89Nby6IcDb44cMC1hi38o7G00.jpg",
+        "/media/j57xyLadaoN7mIuoM6NBM99QIo.jpg",
+        "/media/e8NClSYBkCsixyyQW36DY0ixzI.jpg",
+        "/media/FXMshMPcaQVzIKRVOajtiXU.jpg",
+        "/media/8FoAEp2G0I9aRIE0Sf4uqm6DGw.jpg",
+        "/media/bDhyTny4xjNm4sLNodYGAEKUko.jpg",
+        "/media/JUdv9Sf0K1UQ6nCakxs7J6uwhWw.jpg",
+        "/media/vX80kXViwH9Fo7HadCyvBddhME.jpg",
+        "/media/SAKt8eD3zmWfKbGbhPuVrBBN9w.jpeg",
+        "/media/RRSCMrnkewGD9VbxIA1knTp3WE.jpeg",
+        "/media/h9R9Z15tXhAMkPJWlTyJJVBxUM.png",
+        "/media/fbP2xtisIdvZ0NOpNRkH2YAzQQU.jpeg",
+        "/media/GyDDGzGAr7sqQy3h6Njga05w.jpeg",
+        "/media/chRpQBpkK1iE9Ol4XrTJTa5UiyU.jpeg",
+        "/media/GnymSkvf2rf4877qtogwH9GuJE.jpeg",
+        "/media/iAKQ6rlSw8b5UqZH6J6cEj5TAXM.jpeg",
+        "/media/am29IN7e259QtPRSVS3YxzyFvxA.png"
+      ]
+    }
+  },
+  "projects": [
+    {
+      "slug": "cloudveil",
+      "name": "CLOUDVEIL",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Poised within the exclusive Dancing Sun neighborhood of Tuhaye, Cloudveil is a 5,820-square-foot statement of elevated living \u2014 a refined mountain retreat where modern architecture, rich materiality, and natural serenity converge. With four bedrooms, four and a half bathrooms, and a design that embraces both comfort and sophistication, Cloudveil delivers a deeply personal take on luxury. The interiors reflect a masculine, modern aesthetic, marked by clean lines, grounded textures, and a restrained elegance. Anchoring the home is a dramatic open-concept living area, where custom Burchette & Burchette wood flooring sets the tone for timeless quality underfoot. Expansive glazing brings in filtered mountain light, evoking the home's namesake \u2014 soft, shifting veils of cloud that dance across the landscape. Bespoke lighting and tailored finishes amplify the home\u2019s curated ambiance. For the wellness-minded, Cloudveil features a private spa sanctuary, complete with a custom sauna designed to soothe and restore. A dedicated golf simulator suite offers both leisure and precision, while generous gathering spaces \u2014 both indoors and out \u2014 encourage year-round entertaining. Fire features, intimate lounges, and mountain views make every moment immersive. Thoughtful details include an integrated smart lighting system, luxurious bath fixtures, and handcrafted millwork throughout \u2014 all chosen to enhance both the daily rhythm and the visual serenity of the home. Cloudveil is more than a home. It is a high-altitude haven \u2014 a quiet, powerful presence nestled in the Wasatch, where every element is designed not just to impress, but to endure.",
+        "')\" data-framer-background-image-wrapper=\"true\">AS SEEN INAS SEEN INVitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella.",
+        "')\" data-framer-background-image-wrapper=\"true\">AS SEEN INVitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/WIXf9C0o7dhearF7SPcsHJODOvU.jpg",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png",
+        "/media/39JVS7ej30gJKSVxXLjNTu7e7Ik.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "ridgeway",
+      "name": "RIDGEWAY",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "At 7,000 square feet of internal accommodation with five bedrooms, five bathrooms, and two half baths, this home is a sanctuary of sophistication and comfort, designed to cater to the most discerning tastes. The heart of the home is a sprawling open-concept living area, where soaring ceilings adorned with Douglas fir timbers create a grand yet inviting atmosphere. Custom rift-cut oak cabinetry and natural stone countertops add a touch of timeless elegance, while the bespoke light fixtures and art curator-designed lighting set the perfect ambiance, highlighting the home\u2019s exquisite finishes. An entertainer's paradise, this residence features expansive exterior living spaces complete with multiple fire pits, inviting you to enjoy the crisp mountain air and stunning vistas. Indoors, a state-of-the-art gym and a media room offer endless opportunities for relaxation and wellness. The bunk room provides a fun and cozy retreat for guests or family members, while the private elevator ensures easy access to every level of the home. Ski enthusiasts will appreciate the thoughtfully designed ski lockers, offering both convenience and style. The luxury extends into every detail, with THG Paris sanitaryware and a comprehensive Lutron lighting and shades package, allowing you to control the ambiance of your home with effortless precision. This mountain modern masterpiece is more than just a residence\u2014it is a refined retreat, where every element has been meticulously curated to offer an unparalleled lifestyle of luxury, comfort, and beauty.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/yfuBWf4WWRrzoE8egA0XChUgp2w.jpg",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png",
+        "/media/bjcZreqsCIM8lKgem9WVcmGxqFI.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "empire-pass-chalet",
+      "name": "EMPIRE-PASS-CHALET",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Spanning an impressive 4,442 square feet of internal accommodation, this meticulously crafted home offers five lavish bedrooms and seven opulent bathrooms, designed for those who demand the very best in life. Upon entering, you're greeted by soaring high ceilings that create an immediate sense of grandeur, while floor-to-ceiling windows bathe the interior in an abundance of natural light. The warmth of oak paneling paired with natural stone countertops exudes sophistication, seamlessly blending contemporary elegance with timeless materials. The heart of the home is its expansive living area, where bespoke finishes and custom craftsmanship are evident in every detail. The natural wood and stone elements flow effortlessly from the interior to the exterior living spaces, creating a harmonious connection with the surrounding landscape. This organic design not only enhances the aesthetic appeal but also fosters a deep sense of tranquility and grounding. The residence is thoughtfully equipped with luxurious amenities, including a steam shower, ideal for apr\u00e8s-ski relaxation, and a state-of-the-art ski locker, ensuring every convenience is at your fingertips. Each bedroom serves as a private retreat, offering unparalleled comfort and privacy, while the bathrooms are outfitted with exquisite fixtures that elevate daily rituals into moments of indulgence. This Empire Pass residence is not just a home; it is a masterpiece, where nature and luxury converge to create a sanctuary of unparalleled refinement.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/SqGHiID1Lduhz3YhIoLeK0ZDPnA.jpg",
+        "/media/SNN6CKBrLpODQsfUpooaAKnB2k.jpg",
+        "/media/iL2wQeqB0HeilgmFhgDousZVv8.jpg",
+        "/media/dgDBNQK8Eqdl78dbfddwGyueZA.jpg",
+        "/media/wtPowhoJb3AdpfGRh3hna5jUWUY.jpg",
+        "/media/Xek4V9yfoGWxrVtJovYWsyKoAI.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "gemini",
+      "name": "GEMINI",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Gemini Place provides functional flow and seamless indoor/outdoor living for all four seasons, replete with the luxury inclusions of a mountain modern dream home. Gemini Place comprises 4,848 square feet of internal accommodation with four bedrooms, four bathrooms, 2 half baths, and one home office, on a 14,022 square-foot lot. Externally, the house blends harmoniously with its surroundings, but behind the discreet facade lies a playful home elevated with tailored embellishments throughout. Welcomed into the home through a steel-clad portal, the oversized steel and glass pivot door baptizes entrants with breathtaking views. The main level showcases an open floor plan with an expansive kitchen, a dining room, and a living room with panoramic glass sliding doors that open onto over 1,500 square feet of exterior living space. The master suite on the main level surprises with elevated finishes. The informal lower level features a bar, bunk room, two additional en suite bedrooms, and a charming outdoor veranda. Luxury is woven into Gemini Place throughout, including exposed steel beams, a Miele appliance package, and bespoke natural stone finishes. Just three minutes from Deer Valley's Jordanelle gondola and five minutes from the Jordanelle Reservoir, this home offers four-season resort-style living at its finest.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/gQnHjquYCOAcDPybcSG9qxi14fM.jpg",
+        "/media/3ziEttIbYFXk6NHviVHHRX64D0.jpg",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "a-frame",
+      "name": "A-FRAME",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "The design effortlessly blends mid-century charm with modern sensibility, creating a warm and inviting atmosphere that is both stylish and functional and deeply grounded in the Japanese history of the A-frame architectural style. The open floor plan is an entertainer\u2019s dream, featuring a spacious living room that flows seamlessly into a bright and airy kitchen. Both spaces are enhanced by custom cabinetry and natural stone countertops, offering a perfect balance of luxury and comfort. Connecting these areas is a stunning living atrium, a lush green space that infuses the home with healthy, humidified air and natural beauty. The master suite, occupying the entire second level, is a sanctuary of luxury and tranquility. With soaring 25-foot ceilings, this expansive retreat offers breathtaking views, a walk-in closet, and an en suite bathroom equipped with a rejuvenating steam shower. The versatile space is ample enough to accommodate a home office, making it a true retreat within the home. Step outside, and you\u2019ll discover lush outdoor living spaces designed for relaxation and entertainment. Multiple areas, including expansive redwood decks, a flagstone patio, a fire pit, and hot tub that provide endless opportunities to enjoy the natural surroundings. The outdoor wood sauna adds a touch of luxury, offering a serene escape after a day of mountain activities. This A-frame home is more than just a residence; it is a tribute to the design and craftsmanship that is rooted in the Japanese style where the A-frame can trace its origin.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/gQnHjquYCOAcDPybcSG9qxi14fM.jpg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/YuQa780faHkQ58QuyGHQ2mPpVm0.jpg",
+        "/media/qG0SVSXUPtQTLP4JOXoc3oALRg.jpg",
+        "/media/CYZ1MmCCLJTkMj3diQuwl24M.jpg",
+        "/media/JGohivCRF6zOqEmjjnEiQualI.jpg",
+        "/media/Tn1cYDD6diCeDLGXllEYikgUicA.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "twin-peaks-hideaway",
+      "name": "TWIN-PEAKS-HIDEAWAY",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "This cozy hideaway home exudes understated luxury in an efficient layout that maximizes the functionality and elevates the property into an estate home. Upon entry, one is immediately struck by a custom metal inlaid staircase, not merely a means of transit but a work of art that marries form with function. This staircase, with its intricate metalwork, ascends through the home, guiding one's gaze across the bespoke details that define each space. The architectural journey continues into the salon with soaring high tongue and groove clad ceilings that amplify the sense of space and luxury, drawing the eye out to the commanding views of the majestic surrounding mountains. The interior exudes a refined elegance, where every element has been custom-crafted to perfection. Custom vanities in each bathroom are not just functional but art pieces, showcasing the finest materials and craftsmanship. The secret speakeasy-style golf suite is a luxurious retreat hidden behind an unassuming space in the home, where guests can enjoy a personalized golfing experience after a morning on the slopes. This unique feature is complemented by a compact kitchen, tailored to the highest standards with state-of-the-art appliances and finishes that cater to the most discerning tastes. The seamless indoor-outdoor living experience is enhanced by the thoughtful design that allows the natural beauty of the landscape to become an integral part of the home\u2019s ambiance. The use of natural materials, combined with the panoramic views, fosters an environment where luxury and nature harmoniously coexist, providing a tranquil escape from the everyday.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/gQnHjquYCOAcDPybcSG9qxi14fM.jpg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/VQK4Vtgl00JIoDwVGjwdk88jw.jpg",
+        "/media/jMANZaw0d0z27BeVOQvSTfak.jpg",
+        "/media/lhjcafjaCkvwmABa9hGDQwF32zI.jpg",
+        "/media/p76WSWcVxZu74rmZl92ZIScHlA.jpg",
+        "/media/RJbqguWF82o7ViSWmxx6reG0hJs.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "bison-bluff",
+      "name": "BISON-BLUFF",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Offering breathtaking mountain views and unparalleled privacy, this meticulously designed home is a sanctuary of elegance and tranquility. The expansive, open floor plan is an entertainer's dream, seamlessly blending indoor and outdoor living. The great room, with its soaring high ceilings and commanding stone fireplace, serves as the heart of the home, where gatherings naturally unfold in a space bathed in natural light. The main level master suite is a private retreat, designed with the utmost attention to detail, while the loft office provides a serene environment for work or reflection, framed by panoramic views. Descending to the lower level, you\u2019ll find two additional bedrooms, each thoughtfully designed to offer comfort and privacy. A board-formed concrete wine wall welcomes guests into a private and modern speakeasy, replete with a copper bar, golf simulator, and gathering space. The home also features versatile bonus rooms and ample storage, adding to its practicality and appeal. Outdoors, the back deck serves as a peaceful haven, offering shade from the sun and a seamless connection to the surrounding natural beauty. The marriage of natural wood and stone elements between the indoor and outdoor spaces creates a grounding, harmonious aesthetic that invites relaxation. This residence is perfectly positioned just a short drive from Promontory\u2019s world-class amenities, including the beach club, tubing hill, pool, spa, gym, tennis courts, and multiple clubhouses. For those seeking even more entertainment, The Shed offers indoor basketball, bowling, and a 53-seat theater, while the kids\u2019 cabin and ice skating rink provide endless fun for all ages.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/gQnHjquYCOAcDPybcSG9qxi14fM.jpg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/s3t6epwKtFrnDzBhgZX5QrgCv8.jpg",
+        "/media/CJs9C230Im4XY4VM3I5H2yWy9Q.jpg",
+        "/media/j2Rq9yGD1TtsmWaSBu4eGxlKbk.jpg",
+        "/media/vUH6j1WNkfgL8Uni0lsT1RwXGcc.jpg",
+        "/media/PlZGg2q1yCn1nBhl6q10Ah9aNSY.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "alpenglow",
+      "name": "ALPENGLOW",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Encompassing 4,143 square feet with five bedrooms and six bathrooms, Alpenglow is an intimate yet opulent retreat, designed for those who seek harmony between refined living and the untamed beauty of nature. At its core, the home boasts a spacious gourmet kitchen, where sleek quartzite countertops and custom alder wood cabinetry create a haven for culinary creativity. Expansive glass walls dissolve boundaries, offering seamless indoor-outdoor flow that invites the crisp mountain air and golden hues of Deer Valley\u2019s alpenglow into every corner. The open-concept living area, anchored by a sculptural stone fireplace, blends warmth and sophistication, with handcrafted bronze lighting casting a soft, inviting glow. Adjacent to community trails, Alpenglow\u2019s extensive outdoor living spaces are an entertainer\u2019s dream, featuring a wraparound deck, a sunken hot tub, and a fire-lit lounge area perfect for stargazing under the vast Utah sky. Inside, thoughtful details elevate the experience: a serene master suite with panoramic views, a dedicated wellness room for quiet reflection, and custom ski storage for effortless adventures on Deer Valley\u2019s slopes. Alpenglow is a sanctuary where mountain serenity and modern luxury intertwine, creating a legacy of unforgettable moments. Architecture: Studio Moxie Interior Architecture: Studio Moxie",
+        "Encompassing 4,143 square feet with five bedrooms and six bathrooms, Alpenglow is an intimate yet opulent retreat, designed for those who seek harmony between refined living and the untamed beauty of nature. At its core, the home boasts a spacious gourmet kitchen, where sleek quartzite countertops and custom alder wood cabinetry create a haven for culinary creativity. Expansive glass walls dissolve boundaries, offering seamless indoor-outdoor flow that invites the crisp mountain air and golden hues of Deer Valley\u2019s alpenglow into every corner. The open-concept living area, anchored by a sculptural stone fireplace, blends warmth and sophistication, with handcrafted bronze lighting casting a soft, inviting glow. Adjacent to community trails, Alpenglow\u2019s extensive outdoor living spaces are an entertainer\u2019s dream, featuring a wraparound deck, a sunken hot tub, and a fire-lit lounge area perfect for stargazing under the vast Utah sky. Inside, thoughtful details elevate the experience: a serene master suite with panoramic views, a dedicated wellness room for quiet reflection, and custom ski storage for effortless adventures on Deer Valley\u2019s slopes. Alpenglow is a sanctuary where mountain serenity and modern luxury intertwine, creating a legacy of unforgettable moments.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/gQnHjquYCOAcDPybcSG9qxi14fM.jpg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/y2dqdqeJSAUQuW4XZEdruAg3cM.jpg",
+        "/media/ZQ5kSi64SFJWHCkLgM4UHE8kk.jpg",
+        "/media/NHY0IidoXPAZPzkLeDAMnlxPDpg.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "telios",
+      "name": "TELIOS",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Vitruvius Built presents Telios, a luxury mountain residence where modern elegance meets the raw beauty of alpine living. Formed of steel, wood, stone, and glass, the home captures uninterrupted views of Deer Valley and Bald Mountain, while its design affords a fluid connection between indoors and out in all four seasons. The main level is anchored by a soaring great room, kitchen, and dining area that extend effortlessly onto more than 1,000 SF of outdoor living space. Here, sliding walls of glass erase boundaries, allowing the mountain light to define the interior. A master wing, accessed through an art-wall corridor, offers a private garage, balcony, and an outdoor retreat\u2014balancing seclusion with connection to the whole. The lower ground floor redefines informal living. A yoga studio and sauna sit in harmony with a billiards room, wet bar, and open lounge designed for gathering. A private office enclosed in steel and glass, a bunk room, and three additional en suite bedrooms enrich the sense of space and versatility. Throughout, Telios demonstrates exemplary craftsmanship and a devotion to detail. Tongue-and-groove ceilings and a shou sugi ban\u2013clad fireplace bring texture and warmth; exposed steel beams and a steel-framed divider wall celebrate structure with elegance. The master bath exemplifies indulgence, while finishes of marble and sleek modern sanityware elevate everyday rituals to moments of calm. With its seamless marriage of form and function, Telios is not merely a home, but a composition of light, material, and landscape, standing as a sophisticated embodiment of modern mountain living at its most refined.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/miKnYCKGvbEeG9q9hPaIIBRnJU.jpg",
+        "/media/vX80kXViwH9Fo7HadCyvBddhME.jpg",
+        "/media/ZnDLDpsYN9Rubh8Xr7SYl3UgE.jpg",
+        "/media/isWlxm1RjJSQJSjbAisgScUdPUg.jpg",
+        "/media/GJ6pANakiWMGrIGrnBOV7ZetF8.jpg",
+        "/media/Qy8jliXGzJcoP22PVE6NAYOpqc.jpg",
+        "/media/qCQ9ayeVZTAtXnkBmBD06qu1tw.jpg",
+        "/media/YVws9wKRkskWBXB1kvQ0Gtiqx9M.jpg",
+        "/media/VOhV6V8B3dRKHxqRp5KPnOGcfs.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "eagles-nest",
+      "name": "EAGLES-NEST",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "For a Buffalo-based client who first learned to ski on the slopes of Deer Valley as a child, Eagle\u2019s Nest is both a return and a promise. What began as boyhood winters carving turns beneath Bald Mountain now lives on in the anticipation of watching his own children glide downhill, faces bright with the same exhilaration. The home is rooted in those early memories and shaped by a desire to create new ones, season after season. Situated at the base of Deer Valley with uninterrupted views of Bald Mountain, the 3,700-square-foot retreat is designed for intimacy and immersion in the alpine landscape. Mornings begin with first light on the ridgeline and the quiet ritual of gearing up for the lifts; summers unfold along the surrounding network of hiking and biking trails, where the terrain becomes an extension of daily life. Scaled for warmth and connection, the architecture favors proportion over monumentality. Generous glazing keeps the mountain in constant view, while outdoor fireplaces anchor sheltered terraces where stories of the day\u2019s runs are retold long after the snow has settled. The home encourages gathering, whether around a crackling fire in winter or beneath cool alpine evenings in July. Inside, hemlock wraps walls and ceilings in continuous warmth, creating an atmosphere that feels protective and familiar. Black soapstone introduces depth and quiet contrast, grounding kitchens and gathering spaces with a tactile, enduring presence. The restrained palette allows light, texture, and shared experience to take precedence, resulting in a home that feels not only timeless, but deeply personal to the mountains that shaped it.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "axis",
+      "name": "AXIS",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/chRpQBpkK1iE9Ol4XrTJTa5UiyU.jpeg",
+        "/media/NhNfWf0xQaXAxr68Qdj7RX8Huwk.jpeg",
+        "/media/lLYhOdvmCZEzAWr4rDZIyURd31w.jpeg",
+        "/media/9JoR5tgzMJTfxWhTxG2gWY9Y.jpeg",
+        "/media/vCHNzTtjXqbpsUEQ4FwVHgwXVY.jpg",
+        "/media/v1chsfNYHyX0MJNlYDYQgg1BY8.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "quarry-mountain",
+      "name": "QUARRY-MOUNTAIN",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "For a family putting down lasting roots in Park City, this 10,000-square-foot estate within the gated enclave of Quarry Mountain Ranch is conceived as both sanctuary and legacy. Designed to evolve alongside its owners, the home balances permanence with a deep sensitivity to the land it inhabits. Thoughtfully positioned within an alpine meadow shaped by the gentle flow of McLeod Creek, the residence embraces its setting. The waterway threads through the property, sustaining native grasses and drawing elk, deer, and migratory birdlife, grounding daily life in the rhythms of season and landscape. Broad planes of glass and sheltering rooflines frame uninterrupted views of ski slopes and distant ridgelines, while long sightlines pull natural light deep into the interior. Terraces and covered outdoor rooms mediate between house and meadow, creating spaces for gathering, reflection, and year-round connection to the outdoors. A restrained palette of wood and stone echoes the textures of the terrain, lending warmth and durability to the home\u2019s contemporary expression. A separate guest house extends the architectural language, forming a discreet compound that supports family life, hospitality, and the enduring cadence of alpine living.",
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/docGASyd8AYEa4MxBXvi4GoLJwg.jpg",
+        "/media/gb6fLXuFmY9coDDx8NUYOZejuoA.jpg",
+        "/media/ShBYVX2Jov9sN3x0VAxLcdHMWS8.jpg",
+        "/media/X3YaDosJXFBF9mZe3zBxCprSCxc.jpg",
+        "/media/JFlDX1XwMOWM2XxiQ3FYOZ724W8.jpg",
+        "/media/NG8a1C7XUxhySA9bU3uYuwOP0Y.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "painted-bluff",
+      "name": "PAINTED-BLUFF",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/SAKt8eD3zmWfKbGbhPuVrBBN9w.jpeg",
+        "/media/VjztOABLVm7uN490w2mfvZYv8.jpeg",
+        "/media/0EUWdQ2v3Fr6DHejB6WMPqaxlB8.jpeg",
+        "/media/nEif7qUk68HRxaYvN9MyFh2Qoyg.jpeg",
+        "/media/KA9FXcYS6SHbezvW5IWxgCNwSZo.jpeg",
+        "/media/kTx1ex0i1I6dm4yRAHO93Oh4aQ.jpeg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "niseko",
+      "name": "NISEKO",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "bowrock",
+      "name": "BOWROCK",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/kUYuc06L5YKHdf5OsJdrERX3dcc.jpeg",
+        "/media/gZOMzZ2eAkEkodV6ySqSA1HN0.jpeg",
+        "/media/TUlvOhKLR7xc7TSKaPoEEJL84.jpeg",
+        "/media/XsHSpO3T2zg62hLIWeWl5B5rkuc.jpeg",
+        "/media/6neBMMoSYC0CsPQ6GYT3YTDpo.jpeg",
+        "/media/cYpDFzRC4iyOnRR3E7sjiJ5f60E.jpeg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "glenwild-preserve",
+      "name": "GLENWILD-PRESERVE",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+        "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+        "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+        "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+        "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    },
+    {
+      "slug": "hail-peak",
+      "name": "HAIL-PEAK",
+      "title": "VITRUVIUS BUILT | Luxury Construction Firm in Park City, Utah",
+      "description": "Luxury Residential Construction Firm Based in Park City, Utah.",
+      "paragraphs": [
+        "Vitruvius Built is a luxury residential construction firm focused exclusively on custom homes in Park City, Deer Valley, and the Wasatch Back of Utah.",
+        "Our work includes mountain residences in Promontory, Tuhaye, Victory Ranch, The Colony, Deer Crest, Powder Mountain, Old Town, and Marcella."
+      ],
+      "images": [
+        "/media/Xkd8BbKNETKDIbsXlTisGXQg.png",
+        "/media/Hq6sq7173SYLrazZkFNFfZGfG0.png",
+        "/media/eGhvr6jpHlfmkaaVJ2ZPitOhPQ.svg",
+        "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+        "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+        "/media/zJsRk3HU5MeToUrfAyHO40VAQ.png",
+        "/media/byFnbAfXHTdSqzur7WPU7wYi4IA.jpeg",
+        "/media/GyDDGzGAr7sqQy3h6Njga05w.jpeg",
+        "/media/gJgzprsktG1OYcmCdCeB04nW30.jpeg",
+        "/media/68kIOXrLbeB8Er0qtsqYQMy7Sg.jpeg",
+        "/media/vCHNzTtjXqbpsUEQ4FwVHgwXVY.jpg",
+        "/media/v1chsfNYHyX0MJNlYDYQgg1BY8.jpg"
+      ],
+      "heroImage": "/media/Xkd8BbKNETKDIbsXlTisGXQg.png"
+    }
+  ]
+}

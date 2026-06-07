@@ -1,0 +1,99 @@
+[
+  {
+    "id": "hero-poster",
+    "role": "hero-poster",
+    "path": "/media/gallery/namu-statyba/projektas-5-08.webp",
+    "section": "hero",
+    "priority": true
+  },
+  {
+    "id": "logo-svg",
+    "role": "logo",
+    "path": "/media/lino-logo.png",
+    "section": "nav"
+  },
+  {
+    "id": "logo-svg-light",
+    "role": "logo",
+    "path": "/media/lino-logo-light.svg",
+    "section": "footer"
+  },
+  {
+    "id": "watermark",
+    "role": "watermark",
+    "path": "/media/lino-watermark.svg",
+    "section": "features"
+  },
+  {
+    "id": "feature-faqs-image",
+    "role": "feature-image",
+    "path": "/media/gallery/namu-statyba/karkasiniu-namu-statyba-02.webp",
+    "section": "features"
+  },
+  {
+    "id": "where-we-build-image",
+    "role": "section-image",
+    "path": "/media/gallery/sandeliukai/sandeliukas-palanga-cover.webp",
+    "section": "where-we-build"
+  },
+  {
+    "id": "press-1",
+    "role": "press-logo",
+    "path": "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+    "section": "as-seen-in"
+  },
+  {
+    "id": "press-2",
+    "role": "press-logo",
+    "path": "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+    "section": "as-seen-in"
+  },
+  {
+    "id": "press-3",
+    "role": "press-logo",
+    "path": "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+    "section": "as-seen-in"
+  },
+  {
+    "id": "press-4",
+    "role": "press-logo",
+    "path": "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+    "section": "as-seen-in"
+  },
+  {
+    "id": "press-5",
+    "role": "press-logo",
+    "path": "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+    "section": "as-seen-in"
+  },
+  {
+    "id": "press-6",
+    "role": "press-logo",
+    "path": "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png",
+    "section": "as-seen-in"
+  },
+  {
+    "id": "press-7-mobile",
+    "role": "press-logo",
+    "path": "/media/Hw8uJyB0ajY3M9eYkvFTP0uA.png",
+    "section": "as-seen-in-mobile"
+  },
+  {
+    "id": "carousel-fallback-1",
+    "role": "carousel-image",
+    "path": "/media/QXFCbElTengl6YigMvVEani8i8.jpg",
+    "section": "carousel"
+  },
+  {
+    "id": "carousel-fallback-2",
+    "role": "carousel-image",
+    "path": "/media/Qy8jliXGzJcoP22PVE6NAYOpqc.jpg",
+    "section": "carousel"
+  },
+  {
+    "id": "carousel-fallback-3",
+    "role": "carousel-image",
+    "path": "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
+    "section": "carousel"
+  }
+]

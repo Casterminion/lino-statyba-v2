@@ -1,0 +1,11 @@
+{
+  "name": "lino-statyba",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix site",
+    "build": "npm run build --prefix site",
+    "start": "npm run start:next --prefix site",
+    "lint": "npm run lint --prefix site"
+  }
+}

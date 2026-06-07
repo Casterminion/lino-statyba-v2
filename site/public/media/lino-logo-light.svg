@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none" aria-hidden="true">
+  <g stroke="#f2be6e" stroke-width="1.5">
+    <line x1="4" y1="8" x2="4" y2="56"/>
+    <line x1="18" y1="8" x2="18" y2="56"/>
+    <line x1="4" y1="20" x2="18" y2="20"/>
+    <line x1="4" y1="44" x2="18" y2="44"/>
+  </g>
+  <path d="M34 42c0-10 6-18 14-18s14 8 14 18" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M48 42v8" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="40" y="28" width="12" height="12" rx="1" stroke="#ffffff" stroke-width="2"/>
+  <line x1="46" y1="28" x2="46" y2="40" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="40" y1="34" x2="52" y2="34" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="62" y="44" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="0.08em" fill="#ffffff">LINO</text>
+  <line x1="62" y1="50" x2="138" y2="50" stroke="#ffffff" stroke-width="3"/>
+  <text x="148" y="44" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="0.06em" fill="#f2be6e">STATYBA</text>
+</svg>
