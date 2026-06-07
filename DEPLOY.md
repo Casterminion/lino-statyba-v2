@@ -18,15 +18,17 @@
 
 ### Alternative (repo root)
 
-If you keep the repo root as the Vercel root directory, the root [`vercel.json`](vercel.json) runs install/build inside `site/`. Do **not** also set Root Directory to `site` in the dashboard — pick one approach.
+The root [`vercel.json`](vercel.json) points Vercel at the Next.js app in `site/` via `@vercel/next`. Leave **Root Directory** empty and clear any custom **Output Directory** in the dashboard (must not be `public`).
 
 ### Troubleshooting
 
 | Symptom | Fix |
 |---------|-----|
-| Build stops at “Collecting page data” or deploy fails after build | Set **Root Directory** to `site` and clear custom build commands |
+| `No Output Directory named "public" found` | Clear **Output Directory** in Vercel settings, or set **Root Directory** to `site` with Framework = Next.js |
+| Build stops at “Collecting page data” | Set **Root Directory** to `site` and clear custom build commands |
 | `Cannot find module '@tailwindcss/postcss'` | Build deps are in `dependencies`; redeploy after pulling latest |
-| Wrong app / missing routes | Confirm Vercel is connected to the correct GitHub repo |
+| `EBADENGINE` Node version warning | Safe to ignore, or set Node.js version in Vercel to 20.x or 22.x |
+| Wrong app / missing routes | Confirm Vercel is connected to `Casterminion/lino-statyba-v2` (not `Lino-Statyba`) |
 
 ## Custom domain
 

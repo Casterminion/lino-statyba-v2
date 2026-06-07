@@ -1,6 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build --prefix site",
-  "devCommand": "npm run dev --prefix site",
-  "installCommand": "npm install --prefix site"
+  "version": 2,
+  "builds": [
+    {
+      "src": "site/package.json",
+      "use": "@vercel/next"
+    }
+  ]
 }
