@@ -31,7 +31,7 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
           >
             <Image
               src={project.coverImage}
-              alt=""
+              alt={project.images[0]?.title ?? getProjectTypeLabel(project.category)}
               fill
               className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               sizes="(min-width: 1440px) 380px, (min-width: 768px) 50vw, 100vw"

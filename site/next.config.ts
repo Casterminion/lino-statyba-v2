@@ -39,6 +39,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/karkasiniai-namai",
+        destination: "/karkasiniu-skydiniu-namu-statyba",
+        permanent: true,
+      },
+      {
+        source: "/karkasiniai-namai/",
+        destination: "/karkasiniu-skydiniu-namu-statyba",
+        permanent: true,
+      },
+      {
         source: "/galerija",
         destination: "/projektai",
         permanent: true,
@@ -56,6 +66,66 @@ const nextConfig: NextConfig = {
       {
         source: "/privacy-policy/",
         destination: "/privatumo-politika",
+        permanent: true,
+      },
+      {
+        source: "/projects/:slug",
+        destination: "/projektai",
+        permanent: true,
+      },
+      {
+        source: "/projects/:slug/",
+        destination: "/projektai",
+        permanent: true,
+      },
+      {
+        source: "/projects",
+        destination: "/projektai",
+        permanent: true,
+      },
+      {
+        source: "/projects/",
+        destination: "/projektai",
+        permanent: true,
+      },
+      {
+        source: "/company",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/company/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/media",
+        destination: "/projektai",
+        permanent: true,
+      },
+      {
+        source: "/media/",
+        destination: "/projektai",
+        permanent: true,
+      },
+      {
+        source: "/faqs",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/faqs/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/apie-mus",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/apie-mus/",
+        destination: "/",
         permanent: true,
       },
     ];

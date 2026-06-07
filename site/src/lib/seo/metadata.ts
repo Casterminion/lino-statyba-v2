@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BRAND } from "@/lib/brand";
 import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "./config";
 
 type BuildMetadataOptions = {
@@ -63,11 +64,18 @@ export const rootMetadata: Metadata = {
   robots: { index: true, follow: true },
   icons: {
     icon: [
-      { url: "/favicon-light.png", media: "(prefers-color-scheme: light)" },
-      { url: "/favicon-dark.png", media: "(prefers-color-scheme: dark)" },
-      { url: "/media/lino-logo-color.svg", type: "image/svg+xml" },
+      { url: BRAND.icons.light, media: "(prefers-color-scheme: light)" },
+      { url: BRAND.icons.dark, media: "(prefers-color-scheme: dark)" },
+      { url: BRAND.icons.ico, sizes: "any" },
+      { url: BRAND.icons.png32, sizes: "32x32", type: "image/png" },
+      { url: BRAND.icons.png16, sizes: "16x16", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: BRAND.icons.apple, sizes: "180x180", type: "image/png" }],
   },
   manifest: "/site.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: SITE_NAME,
+    statusBarStyle: "default",
+  },
 };

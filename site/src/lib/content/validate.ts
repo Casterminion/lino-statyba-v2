@@ -11,9 +11,8 @@ export function validateSiteContent(): void {
     throw new Error("Invalid home page: carousel.projectSlugs must not be empty");
   }
 
-  const company = siteData.pages.company as { teamMembers?: unknown[] };
-  if (!Array.isArray(company.teamMembers) || company.teamMembers.length === 0) {
-    throw new Error("Invalid company page: teamMembers required");
+  if (!home.sections.whereWeBuild.serviceCards.length) {
+    throw new Error("Invalid home page: whereWeBuild.serviceCards must not be empty");
   }
 }
 

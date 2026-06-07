@@ -1,10 +1,8 @@
 import { PrivacyPolicyPage } from "@/components/legal/PrivacyPolicyPage";
-import { COMPANY, PRIVACY_POLICY } from "@/lib/content/privacy-policy";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getPageSeo } from "@/lib/seo/pages";
 
-export const metadata = {
-  title: `${PRIVACY_POLICY.title} | ${COMPANY.name}`,
-  description: PRIVACY_POLICY.description,
-};
+export const metadata = buildPageMetadata(getPageSeo("/privatumo-politika"));
 
 export default function PrivatumoPolitikaPage() {
   return <PrivacyPolicyPage />;

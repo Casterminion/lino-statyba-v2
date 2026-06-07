@@ -37,63 +37,39 @@
     "section": "where-we-build"
   },
   {
-    "id": "press-1",
+    "id": "partner-daisera",
     "role": "press-logo",
-    "path": "/media/Z7D2zT28qDUgAaGi5Zu4yjSEY.png",
+    "path": "/media/lino-partners/daisera.png",
     "section": "as-seen-in"
   },
   {
-    "id": "press-2",
+    "id": "partner-medzio-bites",
     "role": "press-logo",
-    "path": "/media/fSmGfjH29y9LTpdvBV0nlVs2W4.png",
+    "path": "/media/lino-partners/medzio-bites-logo.png",
     "section": "as-seen-in"
   },
   {
-    "id": "press-3",
+    "id": "partner-legnoline",
     "role": "press-logo",
-    "path": "/media/0D76GaArr7Jn385bNQ481SLtTSs.png",
+    "path": "/media/lino-partners/legnoline-logo.jpg",
     "section": "as-seen-in"
   },
   {
-    "id": "press-4",
+    "id": "partner-reburnent",
     "role": "press-logo",
-    "path": "/media/VtBC7DeLOXFDTjYDKP4C7TYHHw.webp",
+    "path": "/media/lino-partners/reburnent.jpg",
     "section": "as-seen-in"
   },
   {
-    "id": "press-5",
+    "id": "partner-bauen",
     "role": "press-logo",
-    "path": "/media/syqozTVbrpthAfVG6OaRfnlxH4.png",
+    "path": "/media/lino-partners/bauen.png",
     "section": "as-seen-in"
   },
   {
-    "id": "press-6",
+    "id": "partner-essve",
     "role": "press-logo",
-    "path": "/media/dE4sTkXw0hFlmXH0ZCSbcsQCc1Q.png",
+    "path": "/media/lino-partners/essve-logo.webp",
     "section": "as-seen-in"
-  },
-  {
-    "id": "press-7-mobile",
-    "role": "press-logo",
-    "path": "/media/Hw8uJyB0ajY3M9eYkvFTP0uA.png",
-    "section": "as-seen-in-mobile"
-  },
-  {
-    "id": "carousel-fallback-1",
-    "role": "carousel-image",
-    "path": "/media/QXFCbElTengl6YigMvVEani8i8.jpg",
-    "section": "carousel"
-  },
-  {
-    "id": "carousel-fallback-2",
-    "role": "carousel-image",
-    "path": "/media/Qy8jliXGzJcoP22PVE6NAYOpqc.jpg",
-    "section": "carousel"
-  },
-  {
-    "id": "carousel-fallback-3",
-    "role": "carousel-image",
-    "path": "/media/unuCdB7EW04tUPaSbWmjwUxBA.jpg",
-    "section": "carousel"
   }
 ]

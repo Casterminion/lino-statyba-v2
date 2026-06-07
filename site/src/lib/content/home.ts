@@ -1,5 +1,6 @@
 import siteData from "../../../content/site.json";
 import { getAssetsByRole } from "../assets";
+import { BUSINESS_ADDRESS } from "./business";
 import type { HomePageV2, HomeSections } from "./schema";
 import { isHomePageV2 } from "./schema";
 
@@ -42,7 +43,10 @@ export function getServiceCards() {
 }
 
 export function getHomeFooter() {
-  return homeSections.footer;
+  return {
+    ...homeSections.footer,
+    address: BUSINESS_ADDRESS.formatted,
+  };
 }
 
 export function getPressLogos() {

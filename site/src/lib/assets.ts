@@ -1,14 +1,12 @@
 import manifest from "../../content/assets.manifest.json";
 
 export type AssetRole =
-  | "hero-video"
   | "hero-poster"
   | "logo"
   | "watermark"
   | "feature-image"
   | "section-image"
-  | "press-logo"
-  | "carousel-image";
+  | "press-logo";
 
 export type AssetRef = {
   id: string;
@@ -28,10 +26,6 @@ export function getAsset(role: AssetRole): AssetRef | undefined {
 
 export function getAssetById(id: string): AssetRef | undefined {
   return assets.find((a) => a.id === id);
-}
-
-export function getSectionAssets(section: string): AssetRef[] {
-  return assets.filter((a) => a.section === section);
 }
 
 export function getAssetsByRole(role: AssetRole): AssetRef[] {

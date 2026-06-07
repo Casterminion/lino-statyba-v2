@@ -1,11 +1,2 @@
-export { Section } from "./Section";
-export { ContentInset } from "./ContentInset";
-export { Bleed } from "./Bleed";
-export { Overlap } from "./Overlap";
-export { Split } from "./Split";
-export { Stack } from "./Stack";
-export { StickyHero } from "./StickyHero";
 export { NavStack } from "./NavStack";
-export { HeroScrollSpacer } from "./HeroScrollSpacer";
-export { SectionScrollTrack } from "./SectionScrollTrack";
 export { BreakpointVariant, ProjectBreakpointVariant } from "./BreakpointVariant";

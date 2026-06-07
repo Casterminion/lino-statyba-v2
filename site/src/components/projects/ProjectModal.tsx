@@ -170,7 +170,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 >
                   <Image
                     src={image.image}
-                    alt=""
+                    alt={image.title}
                     fill
                     className="object-cover object-center"
                     sizes="52px"

@@ -5,7 +5,9 @@ import Nav from "@/components/nav/index";
 import { ConversionKontaktaiFooter } from "@/components/home-conversion/ConversionKontaktaiFooter";
 import Providers from "@/components/Providers";
 import { ServiceWorkerCleanup } from "@/components/ServiceWorkerCleanup";
-import { home } from "@/lib/content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { rootMetadata } from "@/lib/seo/metadata";
+import { globalStructuredData } from "@/lib/seo/structured-data";
 
 const onest = Onest({
   subsets: ["latin", "latin-ext"],
@@ -14,21 +16,13 @@ const onest = Onest({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: home.title,
-  description: home.description,
-  icons: {
-    icon: [
-      { url: "/favicon-light.png", media: "(prefers-color-scheme: light)" },
-      { url: "/favicon-dark.png", media: "(prefers-color-scheme: dark)" },
-    ],
-  },
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="lt" className={`${onest.variable} overflow-x-hidden`}>
       <body className="min-h-screen overflow-x-hidden bg-primary antialiased">
+        <JsonLd data={globalStructuredData()} />
         <ServiceWorkerCleanup />
         <Providers>
           <Nav />

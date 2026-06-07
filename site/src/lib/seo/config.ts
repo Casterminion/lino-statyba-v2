@@ -1,4 +1,5 @@
 import { COMPANY } from "@/lib/content/privacy-policy";
+import { BUSINESS_ADDRESS, BUSINESS_GEO } from "@/lib/content/business";
 import { BRAND } from "@/lib/brand";
 
 /** Production site origin — used for canonicals, OG URLs, sitemap, and JSON-LD. */
@@ -13,21 +14,21 @@ export const ORGANIZATION = {
   name: COMPANY.name,
   legalName: COMPANY.name,
   url: SITE_URL,
-  logo: `${SITE_URL}/media/lino-logo-color.svg`,
+  logo: `${SITE_URL}${BRAND.logo.color}`,
   email: COMPANY.email,
   telephone: COMPANY.phone.replace(/\s/g, ""),
   vatId: COMPANY.vat,
   companyId: COMPANY.code,
   address: {
-    streetAddress: "Vasario 16-osios g. 32",
-    addressLocality: "Teleičiai",
-    addressRegion: "Kauno r.",
-    postalCode: "53214",
-    addressCountry: "LT",
+    streetAddress: BUSINESS_ADDRESS.streetAddress,
+    addressLocality: BUSINESS_ADDRESS.addressLocality,
+    addressRegion: BUSINESS_ADDRESS.addressRegion,
+    postalCode: BUSINESS_ADDRESS.postalCode,
+    addressCountry: BUSINESS_ADDRESS.addressCountry,
   },
   geo: {
-    latitude: 54.889,
-    longitude: 23.882,
+    latitude: BUSINESS_GEO.latitude,
+    longitude: BUSINESS_GEO.longitude,
   },
   sameAs: [
     "https://www.facebook.com/p/Mb-Lino-Statyba-100076127300338/",

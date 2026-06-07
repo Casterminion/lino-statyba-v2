@@ -1,12 +1,11 @@
 import { ProjectsPageContent } from "@/components/projects";
 import { getLinoPage } from "@/lib/content/lino-pages";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { getPageSeo } from "@/lib/seo/pages";
 
 const page = getLinoPage("projektai");
 
-export const metadata = {
-  title: page.title,
-  description: page.description,
-};
+export const metadata = buildPageMetadata(getPageSeo("/projektai"));
 
 export default function ProjektaiPage() {
   return (

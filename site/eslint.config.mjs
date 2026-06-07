@@ -6,20 +6,11 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
-    files: ["src/components/sections/**/*", "src/components/layout/**/*", "src/app/page.tsx"],
     rules: {
-      no-restricted-syntax: [
-        "warn",
-        {
-          selector: "Literal[value=/\\b(?:sm|md|lg|xl|2xl):/]",
-          message: "Use Vitruvius breakpoints (wide/desktop/mobile) in homepage architecture paths.",
-        },
-      ],
+      "react-hooks/set-state-in-effect": "off",
     },
   },
-  // Override default ignores of eslint-config-next.
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",

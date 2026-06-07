@@ -36,7 +36,7 @@ export function FooterMapCard({ address, variant = "desktop" }: FooterMapCardPro
     >
       <Image
         src={MAP_PREVIEW_SRC}
-        alt=""
+        alt={`MB Lino statyba biuro vieta: ${address}`}
         fill
         className="object-cover object-center"
         sizes={isMobile ? "100vw" : "(min-width: 1440px) 560px, 50vw"}
