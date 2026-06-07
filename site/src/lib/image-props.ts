@@ -1,8 +1,12 @@
-import { getImageBlur } from "@/lib/image-blur-data";
-
-/** Blur placeholder props for next/image when a generated placeholder exists. */
-export function imageBlurProps(src: string) {
-  const blurDataURL = getImageBlur(src);
-  if (!blurDataURL) return {};
-  return { placeholder: "blur" as const, blurDataURL };
+/** Blur placeholders disabled — they delay sharp image paint. */
+export function imageBlurProps(_src: string) {
+  return {};
 }
+
+/** Hero: serve pre-optimized static WebP — skips /_next/image transform latency. */
+export const heroImageDelivery = {
+  unoptimized: true,
+  priority: true,
+  decoding: "sync" as const,
+  fetchPriority: "high" as const,
+};

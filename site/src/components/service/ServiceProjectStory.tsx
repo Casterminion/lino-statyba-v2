@@ -4,7 +4,6 @@ import { cn } from "@/lib/cn";
 import { getGalleryItemById } from "@/lib/content/gallery";
 import type { ServiceStoryBlock } from "@/lib/content/service-pages";
 import { IMAGE_SIZES } from "@/lib/image-sizes";
-import { imageBlurProps } from "@/lib/image-props";
 
 type ServiceProjectStoryProps = {
   blocks: ServiceStoryBlock[];
@@ -34,7 +33,6 @@ function StoryBlock({
             fill
             className="object-cover object-center"
             sizes={IMAGE_SIZES.storyImage}
-            {...imageBlurProps(image.image)}
           />
         ) : null}
       </div>

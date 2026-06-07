@@ -8,7 +8,6 @@ import {
   type Project,
 } from "@/lib/content/projects";
 import { IMAGE_SIZES } from "@/lib/image-sizes";
-import { imageBlurProps } from "@/lib/image-props";
 import { ProjectModal } from "./ProjectModal";
 
 type ProjectsGridProps = {
@@ -37,7 +36,6 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
               fill
               className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               sizes={IMAGE_SIZES.projectCard}
-              {...imageBlurProps(project.coverImage)}
             />
 
             <div

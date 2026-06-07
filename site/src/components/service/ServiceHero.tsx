@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { ContactCtaButton } from "@/components/contact/ContactCtaButton";
 import { getGalleryItemById } from "@/lib/content/gallery";
-import { HERO_IMAGE_QUALITY, IMAGE_SIZES } from "@/lib/image-sizes";
-import { imageBlurProps } from "@/lib/image-props";
+import { heroImageDelivery } from "@/lib/image-props";
 
 type ServiceHeroProps = {
   headline: string;
@@ -27,20 +26,16 @@ export function ServiceHero({ headline, subhead, imageId, imageAlt, ctaLabel }: 
             src={image.image}
             alt={imageAlt}
             fill
-            priority
             className="conversion-hero-image object-cover object-center"
-            sizes={IMAGE_SIZES.hero}
-            quality={HERO_IMAGE_QUALITY}
-            {...imageBlurProps(image.image)}
+            sizes="100vw"
+            {...heroImageDelivery}
           />
         ) : (
           <div className="absolute inset-0 bg-[#e8e4de]" aria-hidden />
         )}
 
-        <div className="conversion-hero-overlay absolute inset-0" aria-hidden />
-
         <div className="relative z-[1] mx-auto flex h-full min-h-[inherit] w-full max-w-[1200px] flex-col justify-end px-5 pb-10 pt-24 wide:px-10 wide:pb-14 desktop:px-10 desktop:pb-14">
-          <div className="flex max-w-[640px] flex-col gap-4">
+          <div data-hero-copy className="flex max-w-[640px] flex-col gap-4">
             <h1 className="type-conversion-hero-title text-white">{headline}</h1>
             <p className="type-conversion-hero-sub text-white/88">{subhead}</p>
             <div className="pt-1">

@@ -5,8 +5,7 @@ import { NAV_ITEMS } from "@/components/nav/constants";
 import { getHeroGalleryImage } from "@/lib/content/gallery";
 import { getHomeIntro } from "@/lib/content/home";
 import { projektaiPage } from "@/lib/content/lino-pages/projektai";
-import { imageBlurProps } from "@/lib/image-props";
-import { HERO_IMAGE_QUALITY, IMAGE_SIZES } from "@/lib/image-sizes";
+import { heroImageDelivery } from "@/lib/image-props";
 
 const projectsCtaLabel =
   NAV_ITEMS.find((item) => item.href === "/projektai")?.label ?? projektaiPage.h1;
@@ -34,17 +33,13 @@ export function ConversionHero() {
             src={poster.image}
             alt={poster.title}
             fill
-            priority
             className="conversion-hero-image object-cover object-center"
-            sizes={IMAGE_SIZES.hero}
-            quality={HERO_IMAGE_QUALITY}
-            {...imageBlurProps(poster.image)}
+            sizes="100vw"
+            {...heroImageDelivery}
           />
         ) : (
           <div className="absolute inset-0 bg-[#e8e4de]" aria-hidden />
         )}
-
-        <div className="conversion-hero-overlay absolute inset-0" aria-hidden />
 
         <div className="relative z-[1] mx-auto flex h-full min-h-[inherit] w-full max-w-[1200px] flex-col justify-end px-5 pb-10 pt-24 wide:px-10 wide:pb-14 desktop:px-10 desktop:pb-14">
           <div data-hero-copy className="flex max-w-[640px] flex-col gap-4">

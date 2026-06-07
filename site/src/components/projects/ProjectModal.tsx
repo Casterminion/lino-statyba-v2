@@ -9,7 +9,6 @@ import {
   type Project,
 } from "@/lib/content/projects";
 import { IMAGE_SIZES } from "@/lib/image-sizes";
-import { imageBlurProps } from "@/lib/image-props";
 
 type ProjectModalProps = {
   project: Project | null;
@@ -113,7 +112,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 draggable={false}
                 className="project-modal-image project-modal-image--active object-contain"
                 sizes={IMAGE_SIZES.modalMain}
-                {...imageBlurProps(activeImage.image)}
               />
             </div>
           </div>
@@ -173,7 +171,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     fill
                     className="object-cover object-center"
                     sizes={IMAGE_SIZES.modalThumb}
-                    {...imageBlurProps(image.image)}
                   />
                 </button>
               ))}
