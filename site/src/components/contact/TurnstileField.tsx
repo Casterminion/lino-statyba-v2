@@ -5,48 +5,47 @@ import { forwardRef, useImperativeHandle, useRef } from "react";
 import { getTurnstileSiteKey } from "@/lib/turnstile/config";
 
 export type TurnstileFieldHandle = {
-  execute: () => void;
+  getResponse: () => string | undefined;
   reset: () => void;
-  getResponsePromise: (timeout?: number) => Promise<string>;
 };
 
-export const TurnstileField = forwardRef<TurnstileFieldHandle>(function TurnstileField(
-  _props,
-  ref,
-) {
-  const widgetRef = useRef<TurnstileInstance>(null);
-  const siteKey = getTurnstileSiteKey();
+type TurnstileFieldProps = {
+  onToken: (token: string) => void;
+  onClear: () => void;
+};
 
-  useImperativeHandle(ref, () => ({
-    execute: () => {
-      widgetRef.current?.execute();
-    },
-    reset: () => {
-      widgetRef.current?.reset();
-    },
-    getResponsePromise: (timeout?: number) => {
-      const promise = widgetRef.current?.getResponsePromise(timeout);
-      if (!promise) {
-        return Promise.reject(new Error("Turnstile widget unavailable"));
-      }
-      return promise;
-    },
-  }));
+export const TurnstileField = forwardRef<TurnstileFieldHandle, TurnstileFieldProps>(
+  function TurnstileField({ onToken, onClear }, ref) {
+    const widgetRef = useRef<TurnstileInstance>(null);
+    const siteKey = getTurnstileSiteKey();
 
-  if (!siteKey) {
-    return null;
-  }
+    useImperativeHandle(ref, () => ({
+      getResponse: () => widgetRef.current?.getResponse(),
+      reset: () => {
+        widgetRef.current?.reset();
+      },
+    }));
 
-  return (
-    <Turnstile
-      ref={widgetRef}
-      siteKey={siteKey}
-      options={{
-        execution: "execute",
-        appearance: "execute",
-        size: "invisible",
-        action: "contact",
-      }}
-    />
-  );
-});
+    if (!siteKey) {
+      return null;
+    }
+
+    return (
+      <div className="min-h-[65px]">
+        <Turnstile
+          ref={widgetRef}
+          siteKey={siteKey}
+          options={{
+            action: "contact",
+            size: "flexible",
+            theme: "light",
+          }}
+          onSuccess={onToken}
+          onExpire={onClear}
+          onError={onClear}
+          onTimeout={onClear}
+        />
+      </div>
+    );
+  },
+);

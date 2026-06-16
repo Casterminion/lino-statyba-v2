@@ -33,6 +33,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [status, setStatus] = useState<ContactFormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileFieldHandle>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileConfigured = Boolean(getTurnstileSiteKey());
 
   const submitContactRequest = useCallback(
@@ -109,9 +110,11 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     if (!isOpen) {
       setStatus("idle");
       setErrorMessage(null);
+      setTurnstileToken(null);
       return;
     }
 
+    setTurnstileToken(null);
     setOverlayOpen(true);
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
@@ -153,26 +156,16 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       ...(zinuteRaw ? { zinute: zinuteRaw } : {}),
     };
 
-    setStatus("loading");
-    setErrorMessage(null);
-
-    try {
-      const turnstile = turnstileRef.current;
-      if (!turnstile) {
-        throw new Error("Turnstile unavailable");
-      }
-
-      turnstile.reset();
-      turnstile.execute();
-      const token = await turnstile.getResponsePromise();
-      await submitContactRequest({ ...payload, turnstileToken: token }, form);
-    } catch {
+    const token = turnstileToken ?? turnstileRef.current?.getResponse();
+    if (!token) {
       setStatus("error");
       setErrorMessage(
-        "Nepavyko patvirtinti, kad esate žmogus. Bandykite dar kartą.",
+        "Palaukite, kol pasirodys saugumo patikra po forma, tada bandykite dar kartą.",
       );
-      turnstileRef.current?.reset();
+      return;
     }
+
+    await submitContactRequest({ ...payload, turnstileToken: token }, form);
   };
 
   return (
@@ -299,7 +292,11 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           ) : null}
 
           <div className="flex flex-col gap-2">
-            <TurnstileField ref={turnstileRef} />
+            <TurnstileField
+              ref={turnstileRef}
+              onToken={setTurnstileToken}
+              onClear={() => setTurnstileToken(null)}
+            />
             <button
               type="submit"
               disabled={status === "loading" || status === "success"}
