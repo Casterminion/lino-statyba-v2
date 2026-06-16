@@ -9,6 +9,7 @@ import {
   type FormEvent,
 } from "react";
 import { TurnstileField, type TurnstileFieldHandle } from "@/components/contact/TurnstileField";
+import { CONTACT_ERRORS } from "@/lib/contact/schema";
 import { getHomeFooter } from "@/lib/content/home";
 import { cn } from "@/lib/cn";
 import { setOverlayOpen } from "@/lib/overlay-open";
@@ -35,6 +36,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const turnstileRef = useRef<TurnstileFieldHandle>(null);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileConfigured = Boolean(getTurnstileSiteKey());
+
+  const handleTurnstileClear = useCallback(() => {
+    setTurnstileToken(null);
+  }, []);
 
   const submitContactRequest = useCallback(
     async (payload: ContactFormRequest, form: HTMLFormElement) => {
@@ -87,13 +92,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           serverError ??
             "Nepavyko išsiųsti užklausos. Bandykite dar kartą vėliau.",
         );
-        turnstileRef.current?.reset();
+        if (res.status === 403 || serverError === CONTACT_ERRORS.turnstile) {
+          turnstileRef.current?.reset();
+        }
       } catch {
         setStatus("error");
         setErrorMessage(
           "Nepavyko išsiųsti užklausos. Patikrinkite interneto ryšį ir bandykite dar kartą.",
         );
-        turnstileRef.current?.reset();
       }
     },
     [],
@@ -163,7 +169,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     };
 
     const token = turnstileToken ?? turnstileRef.current?.getResponse();
-    if (!token) return;
+    if (!token || turnstileRef.current?.isExpired()) {
+      handleTurnstileClear();
+      return;
+    }
 
     await submitContactRequest({ ...payload, turnstileToken: token }, form);
   };
@@ -205,8 +214,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           </p>
         </div>
 
+        <div className="px-6 py-6 wide:px-8 wide:py-7 desktop:px-8 desktop:py-7">
         <form
-          className="flex flex-col gap-5 px-6 py-6 wide:px-8 wide:py-7 desktop:px-8 desktop:py-7"
+          id="contact-modal-form"
+          className="flex flex-col gap-5"
           onSubmit={handleSubmit}
         >
           <input
@@ -290,15 +301,17 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               Ačiū! Jūsų užklausa išsiųsta. Susisieksime per 1 darbo dieną.
             </p>
           ) : null}
+        </form>
 
-          <div className="flex flex-col gap-2">
+          <div className="mt-5 flex flex-col gap-2">
             <TurnstileField
               ref={turnstileRef}
               onToken={setTurnstileToken}
-              onClear={() => setTurnstileToken(null)}
+              onClear={handleTurnstileClear}
             />
             <button
               type="submit"
+              form="contact-modal-form"
               disabled={submitDisabled}
               aria-busy={status === "loading"}
               className="inline-flex h-[52px] w-full items-center justify-center rounded-lg bg-secondary font-body text-[16px] font-semibold tracking-[-0.01em] text-primary transition-all duration-200 hover:bg-[#e8b05e] active:scale-[0.985] active:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
@@ -316,7 +329,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               .
             </p>
           </div>
-        </form>
+        </div>
         </div>
       </div>
     </div>

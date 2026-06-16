@@ -4,8 +4,18 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import { getTurnstileSiteKey } from "@/lib/turnstile/config";
 
+const TURNSTILE_WIDGET_OPTIONS = {
+  action: "contact",
+  appearance: "always" as const,
+  execution: "render" as const,
+  responseField: false,
+  size: "normal" as const,
+  theme: "light" as const,
+};
+
 export type TurnstileFieldHandle = {
   getResponse: () => string | undefined;
+  isExpired: () => boolean;
   reset: () => void;
 };
 
@@ -21,6 +31,7 @@ export const TurnstileField = forwardRef<TurnstileFieldHandle, TurnstileFieldPro
 
     useImperativeHandle(ref, () => ({
       getResponse: () => widgetRef.current?.getResponse(),
+      isExpired: () => widgetRef.current?.isExpired() ?? true,
       reset: () => {
         onClear();
         widgetRef.current?.reset();
@@ -36,13 +47,7 @@ export const TurnstileField = forwardRef<TurnstileFieldHandle, TurnstileFieldPro
         <Turnstile
           ref={widgetRef}
           siteKey={siteKey}
-          options={{
-            action: "contact",
-            appearance: "always",
-            execution: "render",
-            size: "normal",
-            theme: "light",
-          }}
+          options={TURNSTILE_WIDGET_OPTIONS}
           onSuccess={onToken}
           onExpire={onClear}
           onError={onClear}
