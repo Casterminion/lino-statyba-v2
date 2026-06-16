@@ -12,10 +12,10 @@
  *
  * Usage:
  *   node scripts/verify-production-rate-limit.mjs
- *   BASE_URL=https://linostatyba.lt node scripts/verify-production-rate-limit.mjs
+ *   BASE_URL=https://www.linostatyba.lt node scripts/verify-production-rate-limit.mjs
  */
 
-const PRODUCTION_URL = "https://linostatyba.lt";
+const PRODUCTION_URL = "https://www.linostatyba.lt";
 const MINUTE_LIMIT = 3;
 const ENDPOINT = "/api/contact";
 

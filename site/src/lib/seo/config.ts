@@ -4,7 +4,7 @@ import { BRAND } from "@/lib/brand";
 
 /** Production site origin — used for canonicals, OG URLs, sitemap, and JSON-LD. */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://linostatyba.lt";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://www.linostatyba.lt";
 
 export const SITE_NAME = BRAND.name;
 

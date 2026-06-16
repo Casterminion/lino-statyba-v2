@@ -106,8 +106,8 @@ ContactInquiryEmail.PreviewProps = {
   deviceLabel: "Chrome on Mac",
   companyName: "Lino Statyba",
   companyEmail: "info@linostatyba.lt",
-  logoUrl: "https://linostatyba.lt/media/lino-logo.png",
-  siteUrl: "https://linostatyba.lt",
+  logoUrl: "https://www.linostatyba.lt/media/lino-logo.png",
+  siteUrl: "https://www.linostatyba.lt",
 } satisfies ContactInquiryEmailProps;
 
 export default ContactInquiryEmail;
