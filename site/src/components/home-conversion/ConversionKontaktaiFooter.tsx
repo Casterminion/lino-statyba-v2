@@ -120,16 +120,27 @@ function FooterLegalBar({
 }) {
   return (
     <div
-      className="grid grid-cols-[1fr_auto] items-center gap-4"
+      className="grid grid-cols-1 gap-3 wide:grid-cols-[1fr_auto] wide:items-center desktop:grid-cols-[1fr_auto] desktop:items-center"
       data-footer-legal-bar
     >
-      <div className="justify-self-start font-body text-[12px] font-medium leading-none text-white/50">
-        <p>{copyright}</p>
+      <div className="justify-self-start">
+        <p className="font-body text-[12px] font-medium leading-none text-white/50">{copyright}</p>
+        <p className="mt-1 font-body text-[11px] leading-none text-white/38">
+          Svetainę sukūrė{" "}
+          <a
+            href="https://webinteli.lt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/42 no-underline transition-opacity hover:opacity-80"
+          >
+            Webinteli
+          </a>
+        </p>
       </div>
 
       <Link
         href={privacyHref}
-        className="justify-self-end font-body text-[12px] font-medium leading-none whitespace-nowrap text-white/50 no-underline hover:opacity-80"
+        className="justify-self-start font-body text-[12px] font-medium leading-none whitespace-nowrap text-white/50 no-underline hover:opacity-80 wide:justify-self-end desktop:justify-self-end"
       >
         {privacyLabel}
       </Link>
