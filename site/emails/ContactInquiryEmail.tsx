@@ -1,7 +1,8 @@
-import { Hr, Section, Text } from "@react-email/components";
+import { Text } from "@react-email/components";
 import type { ContactInquiryEmailProps } from "@/lib/contact/types";
 import { BrandHeader } from "./components/BrandHeader";
 import { ContactInfoCard } from "./components/ContactInfoCard";
+import { EmailCardTable } from "./components/EmailCardTable";
 import { EmailLayout } from "./components/EmailLayout";
 import { MessageSection } from "./components/MessageSection";
 import { SubmissionMetaSection } from "./components/SubmissionMetaSection";
@@ -17,22 +18,19 @@ export function ContactInquiryEmail(props: ContactInquiryEmailProps) {
 
   return (
     <EmailLayout preview={`Nauja užklausa — ${props.vardas}`}>
-      <Section
-        style={{
-          backgroundColor: emailTheme.card,
-          border: `1px solid ${emailTheme.border}`,
-        }}
-      >
-        <Section
-          style={{
-            height: "3px",
-            backgroundColor: emailTheme.primary,
-            lineHeight: "3px",
-            fontSize: "3px",
-          }}
-        >
-          &nbsp;
-        </Section>
+      <EmailCardTable>
+        <tr>
+          <td
+            style={{
+              height: "3px",
+              backgroundColor: emailTheme.primary,
+              fontSize: "1px",
+              lineHeight: "1px",
+            }}
+          >
+            &nbsp;
+          </td>
+        </tr>
 
         <BrandHeader
           logoUrl={props.logoUrl}
@@ -40,45 +38,56 @@ export function ContactInquiryEmail(props: ContactInquiryEmailProps) {
           submittedAtFormatted={props.submittedAtFormatted}
         />
 
-        <Hr style={{ borderColor: emailTheme.border, margin: "0 28px" }} />
-
-        <Section style={{ padding: "24px 28px 28px" }}>
-          <Text
+        <tr>
+          <td
             style={{
-              margin: "0 0 16px",
-              fontSize: "13px",
-              fontWeight: 600,
-              color: emailTheme.textSecondary,
-              lineHeight: "20px",
+              padding: `0 ${emailTheme.cellPadding}`,
+              borderTop: `1px solid ${emailTheme.border}`,
+              fontSize: "1px",
+              lineHeight: "1px",
             }}
           >
-            Kliento informacija
-          </Text>
+            &nbsp;
+          </td>
+        </tr>
 
-          <ContactInfoCard emoji="👤" label="Vardas" value={props.vardas} />
-          <ContactInfoCard
-            emoji="📞"
-            label="Telefonas"
-            value={props.telefonas}
-            href={telHref}
-          />
-          <ContactInfoCard
-            emoji="✉️"
-            label="El. paštas"
-            value={props.elpastas ?? "—"}
-            href={mailHref}
-          />
+        <tr>
+          <td style={{ padding: `20px ${emailTheme.cellPadding} 16px` }}>
+            <Text
+              style={{
+                margin: 0,
+                fontSize: "13px",
+                fontWeight: "bold",
+                color: emailTheme.textSecondary,
+                lineHeight: "20px",
+              }}
+            >
+              Kliento informacija
+            </Text>
+          </td>
+        </tr>
 
-          <MessageSection message={props.zinute} />
+        <ContactInfoCard label="Vardas" value={props.vardas} />
+        <ContactInfoCard
+          label="Telefonas"
+          value={props.telefonas}
+          href={telHref}
+        />
+        <ContactInfoCard
+          label="El. paštas"
+          value={props.elpastas ?? "—"}
+          href={mailHref}
+        />
 
-          <SubmissionMetaSection
-            submittedAtFormatted={props.submittedAtFormatted}
-            ip={props.ip}
-            deviceLabel={props.deviceLabel}
-            siteUrl={props.siteUrl}
-          />
-        </Section>
-      </Section>
+        <MessageSection message={props.zinute} />
+
+        <SubmissionMetaSection
+          submittedAtFormatted={props.submittedAtFormatted}
+          ip={props.ip}
+          deviceLabel={props.deviceLabel}
+          siteUrl={props.siteUrl}
+        />
+      </EmailCardTable>
     </EmailLayout>
   );
 }

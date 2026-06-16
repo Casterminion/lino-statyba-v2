@@ -32,8 +32,10 @@ export function EmailLayout({ preview, children }: EmailLayoutProps) {
         }}
       >
         <Container
+          width={emailTheme.containerWidth}
           style={{
-            maxWidth: `${emailTheme.containerWidth}px`,
+            width: "100%",
+            maxWidth: emailTheme.containerWidthPx,
             margin: "0 auto",
             padding: "24px 16px",
           }}

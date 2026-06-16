@@ -12,4 +12,6 @@ export const emailTheme = {
   fontFamily:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
   containerWidth: 560,
+  containerWidthPx: "560px",
+  cellPadding: "28px",
 } as const;

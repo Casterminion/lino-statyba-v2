@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/cn";
 import { cursorMotion } from "@/lib/motion";
+import { useOverlayOpen } from "@/lib/overlay-open";
 
 export default function CustomCursor() {
+  const overlayOpen = useOverlayOpen();
   const cursorRef = useRef<HTMLDivElement>(null);
   const posRef = useRef({ x: 0, y: 0 });
   const offsetRef = useRef<number>(cursorMotion.offset.default);
@@ -75,14 +78,26 @@ export default function CustomCursor() {
       `}</style>
       <div
         ref={cursorRef}
-        className="pointer-events-none fixed top-0 left-0 z-cursor mix-blend-difference transition-[width,height,opacity] duration-300 ease-out will-change-transform"
+        className={cn(
+          "pointer-events-none fixed top-0 left-0 z-cursor will-change-transform",
+          overlayOpen
+            ? "transition-opacity duration-200"
+            : "mix-blend-difference transition-[width,height,opacity] duration-300 ease-out",
+        )}
         style={{
           width: size,
           height: size,
           opacity: visible ? 1 : 0,
         }}
       >
-        <div className="h-full w-full rounded-full border border-white bg-white/20" />
+        <div
+          className={cn(
+            "h-full w-full rounded-full",
+            overlayOpen
+              ? "border-2 border-primary bg-primary/15"
+              : "border border-white bg-white/20",
+          )}
+        />
       </div>
     </>
   );

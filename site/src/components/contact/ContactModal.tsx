@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { getHomeFooter } from "@/lib/content/home";
 import { cn } from "@/lib/cn";
+import { setOverlayOpen } from "@/lib/overlay-open";
 import type { ContactApiError, ContactApiSuccess, ContactFormPayload, ContactFormStatus } from "@/lib/contact/types";
 
 type ContactModalProps = {
@@ -33,10 +34,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       return;
     }
 
+    setOverlayOpen(true);
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      setOverlayOpen(false);
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };

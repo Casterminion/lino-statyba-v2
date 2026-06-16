@@ -9,6 +9,7 @@ import {
   type Project,
 } from "@/lib/content/projects";
 import { IMAGE_SIZES } from "@/lib/image-sizes";
+import { setOverlayOpen } from "@/lib/overlay-open";
 
 type ProjectModalProps = {
   project: Project | null;
@@ -49,9 +50,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   useEffect(() => {
     if (!project) return;
+    setOverlayOpen(true);
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
     return () => {
+      setOverlayOpen(false);
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };

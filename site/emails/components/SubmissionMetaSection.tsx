@@ -1,4 +1,4 @@
-import { Link, Section, Text } from "@react-email/components";
+import { Link, Text } from "@react-email/components";
 import { emailTheme } from "../email-theme";
 
 type SubmissionMetaSectionProps = {
@@ -22,45 +22,45 @@ export function SubmissionMetaSection({
   };
 
   return (
-    <Section
-      style={{
-        marginTop: "28px",
-        paddingTop: "20px",
-        borderTop: `1px solid ${emailTheme.border}`,
-      }}
-    >
-      <Text
+    <tr>
+      <td
         style={{
-          margin: "0 0 10px",
-          fontSize: "11px",
-          fontWeight: 600,
-          letterSpacing: "0.06em",
-          textTransform: "uppercase" as const,
-          color: emailTheme.textMuted,
-          lineHeight: "16px",
+          padding: `24px ${emailTheme.cellPadding} ${emailTheme.cellPadding}`,
+          borderTop: `1px solid ${emailTheme.border}`,
         }}
       >
-        Techninė informacija
-      </Text>
+        <Text
+          style={{
+            margin: "0 0 10px",
+            fontSize: "11px",
+            fontWeight: "bold",
+            textTransform: "uppercase" as const,
+            color: emailTheme.textMuted,
+            lineHeight: "16px",
+          }}
+        >
+          Techninė informacija
+        </Text>
 
-      <Text style={{ ...labelStyle, marginBottom: "4px" }}>
-        Data: {submittedAtFormatted}
-      </Text>
-      <Text style={{ ...labelStyle, marginBottom: "4px" }}>
-        Naršyklė: {deviceLabel}
-      </Text>
-      <Text style={{ ...labelStyle, marginBottom: "12px" }}>IP: {ip}</Text>
+        <Text style={{ ...labelStyle, marginBottom: "4px" }}>
+          Data: {submittedAtFormatted}
+        </Text>
+        <Text style={{ ...labelStyle, marginBottom: "4px" }}>
+          Naršyklė: {deviceLabel}
+        </Text>
+        <Text style={{ ...labelStyle, marginBottom: "12px" }}>IP: {ip}</Text>
 
-      <Link
-        href={siteUrl}
-        style={{
-          fontSize: "12px",
-          color: emailTheme.textMuted,
-          textDecoration: "none",
-        }}
-      >
-        {siteUrl.replace(/^https?:\/\//, "")}
-      </Link>
-    </Section>
+        <Link
+          href={siteUrl}
+          style={{
+            fontSize: "12px",
+            color: emailTheme.textMuted,
+            textDecoration: "none",
+          }}
+        >
+          {siteUrl.replace(/^https?:\/\//, "")}
+        </Link>
+      </td>
+    </tr>
   );
 }
