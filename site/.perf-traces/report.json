@@ -1,0 +1,202 @@
+[
+  {
+    "name": "baseline",
+    "config": "Baseline (cursor ON + blur ON)",
+    "closed": {
+      "label": "baseline-closed",
+      "modalOpen": false,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/baseline-closed-modal-closed.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/baseline-closed-modal-closed.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 34.6,
+      "paintMs": 0.17,
+      "layoutMs": 49.28,
+      "compositeMs": 2.17,
+      "scriptingMs": 190.6,
+      "renderingMs": 51.63,
+      "paintCount": 2,
+      "layerUpdates": 1541,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 52.4,
+        "rafWorstMs": 416.5999999999999,
+        "rafFrames": 262,
+        "performancePaintCount": 2
+      }
+    },
+    "open": {
+      "label": "baseline-open",
+      "modalOpen": true,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/baseline-open-modal-open.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/baseline-open-modal-open.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 47,
+      "paintMs": 3.46,
+      "layoutMs": 73.05,
+      "compositeMs": 2.96,
+      "scriptingMs": 225.49,
+      "renderingMs": 79.48,
+      "paintCount": 38,
+      "layerUpdates": 1984,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 55.21668062034046,
+        "rafWorstMs": 33.400000000001455,
+        "rafFrames": 277,
+        "performancePaintCount": 2
+      }
+    }
+  },
+  {
+    "name": "testA",
+    "config": "Test A — cursor OFF, blur ON",
+    "closed": {
+      "label": "testA-closed",
+      "modalOpen": false,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/testa-closed-modal-closed.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/testa-closed-modal-closed.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 19.3,
+      "paintMs": 1.8,
+      "layoutMs": 3.78,
+      "compositeMs": 0.16,
+      "scriptingMs": 117.42,
+      "renderingMs": 5.74,
+      "paintCount": 16,
+      "layerUpdates": 86,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 57.399999999999984,
+        "rafWorstMs": 233.30000000000018,
+        "rafFrames": 287,
+        "performancePaintCount": 2
+      }
+    },
+    "open": {
+      "label": "testA-open",
+      "modalOpen": true,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/testa-open-modal-open.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/testa-open-modal-open.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 13.2,
+      "paintMs": 0,
+      "layoutMs": 0,
+      "compositeMs": 0,
+      "scriptingMs": 81.07,
+      "renderingMs": 0,
+      "paintCount": 0,
+      "layerUpdates": 0,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 59.99999999999999,
+        "rafWorstMs": 16.80000000000109,
+        "rafFrames": 300,
+        "performancePaintCount": 2
+      }
+    }
+  },
+  {
+    "name": "testB",
+    "config": "Test B — cursor ON, blur OFF",
+    "closed": {
+      "label": "testB-closed",
+      "modalOpen": false,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/testb-closed-modal-closed.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/testb-closed-modal-closed.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 39.7,
+      "paintMs": 10.06,
+      "layoutMs": 60.45,
+      "compositeMs": 2.98,
+      "scriptingMs": 202.59,
+      "renderingMs": 73.49,
+      "paintCount": 112,
+      "layerUpdates": 1709,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 57.199999999999996,
+        "rafWorstMs": 250,
+        "rafFrames": 286,
+        "performancePaintCount": 2
+      }
+    },
+    "open": {
+      "label": "testB-open",
+      "modalOpen": true,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/testb-open-modal-open.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/testb-open-modal-open.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 32.6,
+      "paintMs": 0.54,
+      "layoutMs": 47.28,
+      "compositeMs": 3.54,
+      "scriptingMs": 126.48,
+      "renderingMs": 51.36,
+      "paintCount": 6,
+      "layerUpdates": 2628,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 59.99999999999999,
+        "rafWorstMs": 16.80000000000109,
+        "rafFrames": 300,
+        "performancePaintCount": 2
+      }
+    }
+  },
+  {
+    "name": "testC",
+    "config": "Test C — cursor OFF when overlay + blur OFF",
+    "closed": {
+      "label": "testC-closed",
+      "modalOpen": false,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/testc-closed-modal-closed.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/testc-closed-modal-closed.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 34.6,
+      "paintMs": 0.92,
+      "layoutMs": 51.49,
+      "compositeMs": 2.53,
+      "scriptingMs": 157.78,
+      "renderingMs": 54.93,
+      "paintCount": 8,
+      "layerUpdates": 1805,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 59.99999999999999,
+        "rafWorstMs": 16.800000000000182,
+        "rafFrames": 300,
+        "performancePaintCount": 2
+      }
+    },
+    "open": {
+      "label": "testC-open",
+      "modalOpen": true,
+      "tracePath": "/Users/johny/lino statyba v2/site/.perf-traces/testc-open-modal-open.json",
+      "screenshotPath": "/Users/johny/lino statyba v2/site/.perf-traces/testc-open-modal-open.png",
+      "fps": 60,
+      "worstFrameMs": 0,
+      "mainThreadPct": 17.9,
+      "paintMs": 0,
+      "layoutMs": 0,
+      "compositeMs": 0,
+      "scriptingMs": 119.5,
+      "renderingMs": 0,
+      "paintCount": 0,
+      "layerUpdates": 0,
+      "frameCount": 300,
+      "inPage": {
+        "rafFps": 59.99880002399954,
+        "rafWorstMs": 16.799999999999272,
+        "rafFrames": 300,
+        "performancePaintCount": 2
+      }
+    }
+  }
+]

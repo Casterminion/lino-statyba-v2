@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/cn";
 import { cursorMotion } from "@/lib/motion";
 import { useOverlayOpen } from "@/lib/overlay-open";
 
@@ -30,13 +31,6 @@ export default function CustomCursor() {
   }, [hovering]);
 
   useEffect(() => {
-    if (overlayOpen) {
-      visibleRef.current = false;
-      setVisible(false);
-      setHovering(false);
-      return;
-    }
-
     const onMove = (e: MouseEvent) => {
       posRef.current = { x: e.clientX, y: e.clientY };
 
@@ -55,10 +49,9 @@ export default function CustomCursor() {
 
     const onOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const nextHovering = !!target.closest(
-        "a, button, [data-cursor-pointer], input, textarea, select",
+      setHovering(
+        !!target.closest("a, button, [data-cursor-pointer], input, textarea, select"),
       );
-      setHovering((prev) => (prev === nextHovering ? prev : nextHovering));
     };
 
     window.addEventListener("mousemove", onMove);
@@ -70,13 +63,9 @@ export default function CustomCursor() {
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [overlayOpen]);
+  }, []);
 
   if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
-    return null;
-  }
-
-  if (overlayOpen) {
     return null;
   }
 
@@ -89,14 +78,26 @@ export default function CustomCursor() {
       `}</style>
       <div
         ref={cursorRef}
-        className="pointer-events-none fixed top-0 left-0 z-cursor will-change-transform mix-blend-difference transition-[width,height,opacity] duration-300 ease-out"
+        className={cn(
+          "pointer-events-none fixed top-0 left-0 z-cursor will-change-transform",
+          overlayOpen
+            ? "transition-opacity duration-200"
+            : "mix-blend-difference transition-[width,height,opacity] duration-300 ease-out",
+        )}
         style={{
           width: size,
           height: size,
           opacity: visible ? 1 : 0,
         }}
       >
-        <div className="h-full w-full rounded-full border border-white bg-white/20" />
+        <div
+          className={cn(
+            "h-full w-full rounded-full",
+            overlayOpen
+              ? "border-2 border-primary bg-primary/15"
+              : "border border-white bg-white/20",
+          )}
+        />
       </div>
     </>
   );

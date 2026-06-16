@@ -116,7 +116,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-overlay overflow-y-auto overscroll-y-contain bg-[#0f1a30]/75 p-4"
+      className="fixed inset-0 z-overlay overflow-y-auto overscroll-y-contain bg-[#0f1a30]/75 p-4 backdrop-blur-[2px]"
       role="dialog"
       aria-modal="true"
       aria-labelledby="contact-modal-title"
