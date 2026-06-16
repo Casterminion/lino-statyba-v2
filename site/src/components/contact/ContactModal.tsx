@@ -33,10 +33,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [status, setStatus] = useState<ContactFormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileFieldHandle>(null);
-  const formRef = useRef<HTMLFormElement>(null);
-  const pendingPayloadRef = useRef<Omit<ContactFormRequest, "turnstileToken"> | null>(
-    null,
-  );
   const turnstileConfigured = Boolean(getTurnstileSiteKey());
 
   const submitContactRequest = useCallback(
@@ -97,41 +93,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           "Nepavyko išsiųsti užklausos. Patikrinkite interneto ryšį ir bandykite dar kartą.",
         );
         turnstileRef.current?.reset();
-      } finally {
-        pendingPayloadRef.current = null;
       }
     },
     [],
   );
-
-  const handleTurnstileSuccess = useCallback(
-    (token: string) => {
-      const pending = pendingPayloadRef.current;
-      const form = formRef.current;
-
-      if (!pending || !form) {
-        setStatus("error");
-        setErrorMessage(
-          "Nepavyko išsiųsti užklausos. Bandykite dar kartą vėliau.",
-        );
-        turnstileRef.current?.reset();
-        pendingPayloadRef.current = null;
-        return;
-      }
-
-      void submitContactRequest({ ...pending, turnstileToken: token }, form);
-    },
-    [submitContactRequest],
-  );
-
-  const handleTurnstileFailure = useCallback(() => {
-    pendingPayloadRef.current = null;
-    setStatus("error");
-    setErrorMessage(
-      "Nepavyko patvirtinti, kad esate žmogus. Bandykite dar kartą.",
-    );
-    turnstileRef.current?.reset();
-  }, []);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -160,7 +125,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!turnstileConfigured) {
@@ -180,7 +145,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     const zinuteRaw = String(formData.get("zinute") ?? "").trim();
     const website = String(formData.get("website") ?? "").trim();
 
-    pendingPayloadRef.current = {
+    const payload: Omit<ContactFormRequest, "turnstileToken"> = {
       vardas,
       telefonas,
       website,
@@ -190,7 +155,24 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
     setStatus("loading");
     setErrorMessage(null);
-    turnstileRef.current?.execute();
+
+    try {
+      const turnstile = turnstileRef.current;
+      if (!turnstile) {
+        throw new Error("Turnstile unavailable");
+      }
+
+      turnstile.reset();
+      turnstile.execute();
+      const token = await turnstile.getResponsePromise();
+      await submitContactRequest({ ...payload, turnstileToken: token }, form);
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        "Nepavyko patvirtinti, kad esate žmogus. Bandykite dar kartą.",
+      );
+      turnstileRef.current?.reset();
+    }
   };
 
   return (
@@ -231,7 +213,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         </div>
 
         <form
-          ref={formRef}
           className="flex flex-col gap-5 px-6 py-6 wide:px-8 wide:py-7 desktop:px-8 desktop:py-7"
           onSubmit={handleSubmit}
         >
@@ -318,12 +299,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           ) : null}
 
           <div className="flex flex-col gap-2">
-            <TurnstileField
-              ref={turnstileRef}
-              onSuccess={handleTurnstileSuccess}
-              onError={handleTurnstileFailure}
-              onExpire={handleTurnstileFailure}
-            />
+            <TurnstileField ref={turnstileRef} />
             <button
               type="submit"
               disabled={status === "loading" || status === "success"}

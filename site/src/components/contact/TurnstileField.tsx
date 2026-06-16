@@ -7,45 +7,46 @@ import { getTurnstileSiteKey } from "@/lib/turnstile/config";
 export type TurnstileFieldHandle = {
   execute: () => void;
   reset: () => void;
+  getResponsePromise: (timeout?: number) => Promise<string>;
 };
 
-type TurnstileFieldProps = {
-  onSuccess: (token: string) => void;
-  onError: () => void;
-  onExpire: () => void;
-};
+export const TurnstileField = forwardRef<TurnstileFieldHandle>(function TurnstileField(
+  _props,
+  ref,
+) {
+  const widgetRef = useRef<TurnstileInstance>(null);
+  const siteKey = getTurnstileSiteKey();
 
-export const TurnstileField = forwardRef<TurnstileFieldHandle, TurnstileFieldProps>(
-  function TurnstileField({ onSuccess, onError, onExpire }, ref) {
-    const widgetRef = useRef<TurnstileInstance>(null);
-    const siteKey = getTurnstileSiteKey();
+  useImperativeHandle(ref, () => ({
+    execute: () => {
+      widgetRef.current?.execute();
+    },
+    reset: () => {
+      widgetRef.current?.reset();
+    },
+    getResponsePromise: (timeout?: number) => {
+      const promise = widgetRef.current?.getResponsePromise(timeout);
+      if (!promise) {
+        return Promise.reject(new Error("Turnstile widget unavailable"));
+      }
+      return promise;
+    },
+  }));
 
-    useImperativeHandle(ref, () => ({
-      execute: () => {
-        widgetRef.current?.execute();
-      },
-      reset: () => {
-        widgetRef.current?.reset();
-      },
-    }));
+  if (!siteKey) {
+    return null;
+  }
 
-    if (!siteKey) {
-      return null;
-    }
-
-    return (
-      <Turnstile
-        ref={widgetRef}
-        siteKey={siteKey}
-        options={{
-          execution: "execute",
-          size: "invisible",
-          action: "contact",
-        }}
-        onSuccess={onSuccess}
-        onError={onError}
-        onExpire={onExpire}
-      />
-    );
-  },
-);
+  return (
+    <Turnstile
+      ref={widgetRef}
+      siteKey={siteKey}
+      options={{
+        execution: "execute",
+        appearance: "execute",
+        size: "invisible",
+        action: "contact",
+      }}
+    />
+  );
+});
