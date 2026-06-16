@@ -1,33 +1,66 @@
-import { Text } from "@react-email/components";
+import { Link, Section, Text } from "@react-email/components";
 import { emailTheme } from "../email-theme";
 
 type SubmissionMetaSectionProps = {
   submittedAtFormatted: string;
   ip: string;
   deviceLabel: string;
+  siteUrl: string;
 };
 
 export function SubmissionMetaSection({
   submittedAtFormatted,
   ip,
   deviceLabel,
+  siteUrl,
 }: SubmissionMetaSectionProps) {
+  const labelStyle = {
+    margin: 0,
+    fontSize: "12px",
+    lineHeight: "20px",
+    color: emailTheme.textMuted,
+  };
+
   return (
-    <Text
+    <Section
       style={{
-        margin: "48px 0 0",
-        paddingTop: "8px",
-        fontSize: "12px",
-        lineHeight: "20px",
-        color: emailTheme.textMuted,
-        textAlign: "center",
+        marginTop: "28px",
+        paddingTop: "20px",
+        borderTop: `1px solid ${emailTheme.border}`,
       }}
     >
-      {submittedAtFormatted}
-      <span style={{ color: emailTheme.accent, padding: "0 10px" }}>·</span>
-      {deviceLabel}
-      <span style={{ color: emailTheme.accent, padding: "0 10px" }}>·</span>
-      {ip}
-    </Text>
+      <Text
+        style={{
+          margin: "0 0 10px",
+          fontSize: "11px",
+          fontWeight: 600,
+          letterSpacing: "0.06em",
+          textTransform: "uppercase" as const,
+          color: emailTheme.textMuted,
+          lineHeight: "16px",
+        }}
+      >
+        Techninė informacija
+      </Text>
+
+      <Text style={{ ...labelStyle, marginBottom: "4px" }}>
+        Data: {submittedAtFormatted}
+      </Text>
+      <Text style={{ ...labelStyle, marginBottom: "4px" }}>
+        Naršyklė: {deviceLabel}
+      </Text>
+      <Text style={{ ...labelStyle, marginBottom: "12px" }}>IP: {ip}</Text>
+
+      <Link
+        href={siteUrl}
+        style={{
+          fontSize: "12px",
+          color: emailTheme.textMuted,
+          textDecoration: "none",
+        }}
+      >
+        {siteUrl.replace(/^https?:\/\//, "")}
+      </Link>
+    </Section>
   );
 }

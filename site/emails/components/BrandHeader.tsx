@@ -4,44 +4,52 @@ import { emailTheme } from "../email-theme";
 type BrandHeaderProps = {
   logoUrl: string;
   companyName: string;
+  submittedAtFormatted: string;
 };
 
-export function BrandHeader({ logoUrl, companyName }: BrandHeaderProps) {
+export function BrandHeader({
+  logoUrl,
+  companyName,
+  submittedAtFormatted,
+}: BrandHeaderProps) {
   return (
-    <Section style={{ padding: "40px 40px 0", textAlign: "center" }}>
+    <Section style={{ padding: "28px 28px 24px" }}>
+      <Text
+        style={{
+          margin: "0 0 20px",
+          fontSize: "20px",
+          fontWeight: 600,
+          letterSpacing: "-0.02em",
+          color: emailTheme.primary,
+          lineHeight: "28px",
+        }}
+      >
+        🔔 Nauja užklausa iš svetainės
+      </Text>
+
       <Img
         src={logoUrl}
         alt={companyName}
-        width={108}
-        height={36}
+        width={120}
+        height={40}
         style={{
           display: "block",
-          margin: "0 auto 32px",
-          maxWidth: "108px",
+          margin: "0 0 12px",
+          maxWidth: "120px",
           height: "auto",
         }}
       />
+
       <Text
         style={{
           margin: 0,
-          fontSize: "24px",
-          fontWeight: 600,
-          letterSpacing: "-0.02em",
-          color: emailTheme.text,
-          lineHeight: "32px",
+          fontSize: "13px",
+          color: emailTheme.textMuted,
+          lineHeight: "20px",
         }}
       >
-        Nauja užklausa iš svetainės
+        {submittedAtFormatted}
       </Text>
-      <Section
-        style={{
-          margin: "20px auto 0",
-          width: "32px",
-          height: "3px",
-          backgroundColor: emailTheme.accent,
-          borderRadius: "2px",
-        }}
-      />
     </Section>
   );
 }

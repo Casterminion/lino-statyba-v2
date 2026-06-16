@@ -1,4 +1,4 @@
-import { Link, Section } from "@react-email/components";
+import { Hr, Section, Text } from "@react-email/components";
 import type { ContactInquiryEmailProps } from "@/lib/contact/types";
 import { BrandHeader } from "./components/BrandHeader";
 import { ContactInfoCard } from "./components/ContactInfoCard";
@@ -20,27 +20,53 @@ export function ContactInquiryEmail(props: ContactInquiryEmailProps) {
       <Section
         style={{
           backgroundColor: emailTheme.card,
-          borderRadius: `${emailTheme.cardRadius}px`,
-          boxShadow: emailTheme.shadow,
-          overflow: "hidden",
+          border: `1px solid ${emailTheme.border}`,
         }}
       >
-        <BrandHeader logoUrl={props.logoUrl} companyName={props.companyName} />
+        <Section
+          style={{
+            height: "3px",
+            backgroundColor: emailTheme.primary,
+            lineHeight: "3px",
+            fontSize: "3px",
+          }}
+        >
+          &nbsp;
+        </Section>
 
-        <Section style={{ padding: "36px 40px 40px" }}>
-          <ContactInfoCard icon="user" label="Vardas" value={props.vardas} />
+        <BrandHeader
+          logoUrl={props.logoUrl}
+          companyName={props.companyName}
+          submittedAtFormatted={props.submittedAtFormatted}
+        />
+
+        <Hr style={{ borderColor: emailTheme.border, margin: "0 28px" }} />
+
+        <Section style={{ padding: "24px 28px 28px" }}>
+          <Text
+            style={{
+              margin: "0 0 16px",
+              fontSize: "13px",
+              fontWeight: 600,
+              color: emailTheme.textSecondary,
+              lineHeight: "20px",
+            }}
+          >
+            Kliento informacija
+          </Text>
+
+          <ContactInfoCard emoji="👤" label="Vardas" value={props.vardas} />
           <ContactInfoCard
-            icon="phone"
+            emoji="📞"
             label="Telefonas"
             value={props.telefonas}
             href={telHref}
           />
           <ContactInfoCard
-            icon="mail"
+            emoji="✉️"
             label="El. paštas"
             value={props.elpastas ?? "—"}
             href={mailHref}
-            isLast
           />
 
           <MessageSection message={props.zinute} />
@@ -49,20 +75,8 @@ export function ContactInquiryEmail(props: ContactInquiryEmailProps) {
             submittedAtFormatted={props.submittedAtFormatted}
             ip={props.ip}
             deviceLabel={props.deviceLabel}
+            siteUrl={props.siteUrl}
           />
-        </Section>
-
-        <Section style={{ padding: "0 40px 32px", textAlign: "center" }}>
-          <Link
-            href={props.siteUrl}
-            style={{
-              fontSize: "12px",
-              color: emailTheme.textMuted,
-              textDecoration: "none",
-            }}
-          >
-            {props.siteUrl.replace(/^https?:\/\//, "")}
-          </Link>
         </Section>
       </Section>
     </EmailLayout>
@@ -73,7 +87,7 @@ ContactInquiryEmail.PreviewProps = {
   vardas: "Jonas Petraitis",
   telefonas: "+370 612 34567",
   elpastas: "jonas@pastas.lt",
-  zinute: "Domina karkasinio namo statyba. Norėčiau gauti preliminarų pasiūlymą.",
+  zinute: "Domina karkasinio namo statyba. Norėčiau gauti preliminarį pasiūlymą.",
   website: "",
   submittedAt: "2026-06-16T12:00:00.000Z",
   submittedAtFormatted: "2026-06-16 15:00:00",
