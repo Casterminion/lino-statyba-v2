@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { getHomeFooter } from "@/lib/content/home";
 import { cn } from "@/lib/cn";
+import type { ContactApiError, ContactApiSuccess, ContactFormPayload, ContactFormStatus } from "@/lib/contact/types";
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -15,7 +16,8 @@ const inputClassName =
 
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const footer = getHomeFooter();
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<ContactFormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -26,7 +28,8 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   useEffect(() => {
     if (!isOpen) {
-      setSubmitted(false);
+      setStatus("idle");
+      setErrorMessage(null);
       return;
     }
 
@@ -41,29 +44,71 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
 
-    const name = String(data.get("vardas") ?? "").trim();
-    const phone = String(data.get("telefonas") ?? "").trim();
-    const email = String(data.get("elpastas") ?? "").trim();
-    const message = String(data.get("zinute") ?? "").trim();
+    const vardas = String(formData.get("vardas") ?? "").trim();
+    const telefonas = String(formData.get("telefonas") ?? "").trim();
+    const elpastasRaw = String(formData.get("elpastas") ?? "").trim();
+    const zinuteRaw = String(formData.get("zinute") ?? "").trim();
+    const website = String(formData.get("website") ?? "").trim();
 
-    const body = [
-      `Vardas: ${name}`,
-      `Telefonas: ${phone}`,
-      email ? `El. paštas: ${email}` : null,
-      message ? `Žinutė:\n${message}` : null,
-    ]
-      .filter(Boolean)
-      .join("\n");
+    const payload: ContactFormPayload = {
+      vardas,
+      telefonas,
+      website,
+      ...(elpastasRaw ? { elpastas: elpastasRaw } : {}),
+      ...(zinuteRaw ? { zinute: zinuteRaw } : {}),
+    };
 
-    const mailto = `mailto:${footer.email}?subject=${encodeURIComponent("Užklausa — Lino Statyba")}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setSubmitted(true);
-    form.reset();
+    setStatus("loading");
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      let json: unknown = null;
+      try {
+        json = await res.json();
+      } catch {
+        json = null;
+      }
+
+      const isSuccess = (value: unknown): value is ContactApiSuccess => {
+        return typeof value === "object" && value !== null && (value as ContactApiSuccess).ok === true;
+      };
+
+      const isError = (value: unknown): value is ContactApiError => {
+        return typeof value === "object" && value !== null && (value as ContactApiError).ok === false;
+      };
+
+      if (res.ok && isSuccess(json)) {
+        setStatus("success");
+        setErrorMessage(null);
+        form.reset();
+        return;
+      }
+
+      const serverError = isError(json) ? json.error : null;
+      setStatus("error");
+      setErrorMessage(
+        serverError ??
+          "Nepavyko išsiųsti užklausos. Bandykite dar kartą vėliau.",
+      );
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        "Nepavyko išsiųsti užklausos. Patikrinkite interneto ryšį ir bandykite dar kartą.",
+      );
+    }
   };
 
   return (
@@ -107,6 +152,25 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           className="flex flex-col gap-5 px-6 py-6 wide:px-8 wide:py-7 desktop:px-8 desktop:py-7"
           onSubmit={handleSubmit}
         >
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute -left-[9999px] h-0 w-0 opacity-0"
+            disabled={status === "loading"}
+          />
+
+          {status === "error" && errorMessage ? (
+            <p
+              role="alert"
+              className="rounded-lg border border-red-300/50 bg-red-50 px-4 py-3 font-body text-[14px] text-red-800"
+            >
+              {errorMessage}
+            </p>
+          ) : null}
+
           <label className="flex flex-col gap-1.5">
             <span className="font-body text-[13px] font-medium text-primary">
               Vardas <span className="text-primary/45">*</span>
@@ -118,6 +182,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               autoComplete="name"
               className={inputClassName}
               placeholder="Jūsų vardas"
+              disabled={status === "loading"}
             />
           </label>
 
@@ -133,6 +198,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               defaultValue="+370 "
               className={inputClassName}
               placeholder="6XX XXXXX"
+              disabled={status === "loading"}
             />
           </label>
 
@@ -144,6 +210,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               autoComplete="email"
               className={inputClassName}
               placeholder="vardas@pastas.lt"
+              disabled={status === "loading"}
             />
           </label>
 
@@ -157,21 +224,24 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 "h-auto min-h-[96px] resize-y py-3.5",
               )}
               placeholder="Trumpai aprašykite, kuo galime padėti..."
+              disabled={status === "loading"}
             />
           </label>
 
-          {submitted ? (
+          {status === "success" ? (
             <p className="rounded-lg border border-secondary/30 bg-secondary/10 px-4 py-3 font-body text-[14px] text-primary">
-              Ačiū! Jūsų el. pašto programa atsidarys su užpildyta žinute.
+              Ačiū! Jūsų užklausa išsiųsta. Susisieksime per 1 darbo dieną.
             </p>
           ) : null}
 
           <div className="flex flex-col gap-2">
             <button
               type="submit"
-              className="inline-flex h-[52px] w-full items-center justify-center rounded-lg bg-secondary font-body text-[16px] font-semibold tracking-[-0.01em] text-primary transition-all duration-200 hover:bg-[#e8b05e] active:scale-[0.985] active:brightness-95"
+              disabled={status === "loading" || status === "success"}
+              aria-busy={status === "loading"}
+              className="inline-flex h-[52px] w-full items-center justify-center rounded-lg bg-secondary font-body text-[16px] font-semibold tracking-[-0.01em] text-primary transition-all duration-200 hover:bg-[#e8b05e] active:scale-[0.985] active:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Gauti pasiūlymą
+              {status === "loading" ? "Siunčiama..." : "Gauti pasiūlymą"}
             </button>
             <p className="text-center font-body text-[12px] leading-snug text-primary/35">
               Išsiųsdami formą sutinkate su{" "}
