@@ -128,6 +128,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   if (!isOpen) return null;
 
+  const submitDisabled =
+    status === "loading" ||
+    status === "success" ||
+    !turnstileConfigured ||
+    !turnstileToken;
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -157,13 +163,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     };
 
     const token = turnstileToken ?? turnstileRef.current?.getResponse();
-    if (!token) {
-      setStatus("error");
-      setErrorMessage(
-        "Palaukite, kol pasirodys saugumo patikra po forma, tada bandykite dar kartą.",
-      );
-      return;
-    }
+    if (!token) return;
 
     await submitContactRequest({ ...payload, turnstileToken: token }, form);
   };
@@ -299,7 +299,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             />
             <button
               type="submit"
-              disabled={status === "loading" || status === "success"}
+              disabled={submitDisabled}
               aria-busy={status === "loading"}
               className="inline-flex h-[52px] w-full items-center justify-center rounded-lg bg-secondary font-body text-[16px] font-semibold tracking-[-0.01em] text-primary transition-all duration-200 hover:bg-[#e8b05e] active:scale-[0.985] active:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
             >

@@ -22,6 +22,7 @@ export const TurnstileField = forwardRef<TurnstileFieldHandle, TurnstileFieldPro
     useImperativeHandle(ref, () => ({
       getResponse: () => widgetRef.current?.getResponse(),
       reset: () => {
+        onClear();
         widgetRef.current?.reset();
       },
     }));
@@ -31,13 +32,15 @@ export const TurnstileField = forwardRef<TurnstileFieldHandle, TurnstileFieldPro
     }
 
     return (
-      <div className="min-h-[65px]">
+      <div className="flex min-h-[65px] w-full justify-center">
         <Turnstile
           ref={widgetRef}
           siteKey={siteKey}
           options={{
             action: "contact",
-            size: "flexible",
+            appearance: "always",
+            execution: "render",
+            size: "normal",
             theme: "light",
           }}
           onSuccess={onToken}
