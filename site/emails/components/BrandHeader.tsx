@@ -8,46 +8,27 @@ type BrandHeaderProps = {
 
 export function BrandHeader({ logoUrl, companyName }: BrandHeaderProps) {
   return (
-    <Section
-      style={{
-        backgroundColor: emailTheme.primary,
-        borderRadius: `${emailTheme.cardRadius}px ${emailTheme.cardRadius}px 0 0`,
-        padding: "28px 24px 24px",
-        textAlign: "center",
-      }}
-    >
+    <Section style={{ padding: "40px 40px 0", textAlign: "center" }}>
       <Img
         src={logoUrl}
         alt={companyName}
-        width={120}
-        height={40}
+        width={108}
+        height={36}
         style={{
           display: "block",
-          margin: "0 auto 16px",
-          maxWidth: "120px",
+          margin: "0 auto 32px",
+          maxWidth: "108px",
           height: "auto",
         }}
       />
       <Text
         style={{
           margin: 0,
-          fontSize: "22px",
-          fontWeight: 700,
-          letterSpacing: "0.12em",
-          color: emailTheme.textOnDark,
-          textTransform: "uppercase",
-          lineHeight: "28px",
-        }}
-      >
-        LINO STATYBA
-      </Text>
-      <Text
-        style={{
-          margin: "8px 0 0",
-          fontSize: "14px",
-          fontWeight: 400,
-          color: emailTheme.textOnDarkMuted,
-          lineHeight: "20px",
+          fontSize: "24px",
+          fontWeight: 600,
+          letterSpacing: "-0.02em",
+          color: emailTheme.text,
+          lineHeight: "32px",
         }}
       >
         Nauja užklausa iš svetainės
@@ -55,9 +36,9 @@ export function BrandHeader({ logoUrl, companyName }: BrandHeaderProps) {
       <Section
         style={{
           margin: "20px auto 0",
-          width: "48px",
+          width: "32px",
           height: "3px",
-          backgroundColor: emailTheme.secondary,
+          backgroundColor: emailTheme.accent,
           borderRadius: "2px",
         }}
       />

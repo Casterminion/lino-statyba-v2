@@ -9,42 +9,52 @@ export function MessageSection({ message }: MessageSectionProps) {
   const displayMessage = message?.trim() ? message : "—";
 
   return (
-    <Section
-      style={{
-        backgroundColor: emailTheme.card,
-        border: `1px solid ${emailTheme.border}`,
-        borderRadius: `${emailTheme.cardRadius}px`,
-        padding: "18px 20px",
-        marginBottom: "12px",
-        boxShadow: emailTheme.shadow,
-      }}
-    >
+    <Section style={{ marginTop: "40px" }}>
       <Text
         style={{
-          margin: "0 0 8px",
-          fontSize: "11px",
-          fontWeight: 600,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
+          margin: "0 0 16px",
+          fontSize: "12px",
+          fontWeight: 500,
           color: emailTheme.textMuted,
-          lineHeight: "14px",
+          lineHeight: "16px",
         }}
       >
         Žinutė
       </Text>
-      <Text
+      <Section
         style={{
-          margin: 0,
-          fontSize: "15px",
-          fontWeight: 400,
-          color: emailTheme.text,
-          lineHeight: "24px",
-          whiteSpace: "pre-wrap",
-          wordBreak: "break-word",
+          backgroundColor: emailTheme.quoteBg,
+          borderRadius: "12px",
+          padding: "28px 32px",
+          borderLeft: `3px solid ${emailTheme.accent}`,
         }}
       >
-        {displayMessage}
-      </Text>
+        <Text
+          style={{
+            margin: "0 0 12px",
+            fontSize: "32px",
+            fontWeight: 400,
+            color: emailTheme.quoteMark,
+            lineHeight: "24px",
+            fontFamily: "Georgia, 'Times New Roman', serif",
+          }}
+        >
+          &ldquo;
+        </Text>
+        <Text
+          style={{
+            margin: 0,
+            fontSize: "16px",
+            fontWeight: 400,
+            color: emailTheme.textSecondary,
+            lineHeight: "28px",
+            whiteSpace: "pre-wrap",
+            wordBreak: "break-word",
+          }}
+        >
+          {displayMessage}
+        </Text>
+      </Section>
     </Section>
   );
 }

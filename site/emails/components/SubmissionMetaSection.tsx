@@ -1,4 +1,4 @@
-import { Section, Text } from "@react-email/components";
+import { Text } from "@react-email/components";
 import { emailTheme } from "../email-theme";
 
 type SubmissionMetaSectionProps = {
@@ -13,41 +13,21 @@ export function SubmissionMetaSection({
   deviceLabel,
 }: SubmissionMetaSectionProps) {
   return (
-    <Section
-      style={{
-        backgroundColor: emailTheme.surface,
-        border: `1px solid ${emailTheme.borderSubtle}`,
-        borderRadius: `${emailTheme.cardRadius}px`,
-        padding: "16px 18px",
-        marginTop: "8px",
-      }}
-    >
-      <MetaRow label="Pateikta:" value={submittedAtFormatted} />
-      <MetaRow label="IP:" value={ip} />
-      <MetaRow label="Įrenginys:" value={deviceLabel} isLast />
-    </Section>
-  );
-}
-
-function MetaRow({
-  label,
-  value,
-  isLast = false,
-}: {
-  label: string;
-  value: string;
-  isLast?: boolean;
-}) {
-  return (
     <Text
       style={{
-        margin: isLast ? 0 : "0 0 8px",
+        margin: "48px 0 0",
+        paddingTop: "8px",
         fontSize: "12px",
-        lineHeight: "18px",
+        lineHeight: "20px",
         color: emailTheme.textMuted,
+        textAlign: "center",
       }}
     >
-      <span style={{ fontWeight: 600, color: emailTheme.text }}>{label}</span> {value}
+      {submittedAtFormatted}
+      <span style={{ color: emailTheme.accent, padding: "0 10px" }}>·</span>
+      {deviceLabel}
+      <span style={{ color: emailTheme.accent, padding: "0 10px" }}>·</span>
+      {ip}
     </Text>
   );
 }

@@ -1,66 +1,71 @@
-import { Link, Section, Text } from "@react-email/components";
+import { Column, Link, Row, Section, Text } from "@react-email/components";
+import { EmailIcon } from "./EmailIcon";
 import { emailTheme } from "../email-theme";
 
 type ContactInfoCardProps = {
+  icon: "user" | "phone" | "mail";
   label: string;
   value: string;
   href?: string;
+  isLast?: boolean;
 };
 
-export function ContactInfoCard({ label, value, href }: ContactInfoCardProps) {
+export function ContactInfoCard({
+  icon,
+  label,
+  value,
+  href,
+  isLast = false,
+}: ContactInfoCardProps) {
   return (
-    <Section
-      style={{
-        backgroundColor: emailTheme.card,
-        border: `1px solid ${emailTheme.border}`,
-        borderRadius: `${emailTheme.cardRadius}px`,
-        padding: "16px 18px",
-        marginBottom: "12px",
-        boxShadow: emailTheme.shadow,
-      }}
-    >
-      <Text
-        style={{
-          margin: "0 0 6px",
-          fontSize: "11px",
-          fontWeight: 600,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: emailTheme.textMuted,
-          lineHeight: "14px",
-        }}
-      >
-        {label}
-      </Text>
-      {href ? (
-        <Link
-          href={href}
-          style={{
-            margin: 0,
-            fontSize: "16px",
-            fontWeight: 600,
-            color: emailTheme.primary,
-            textDecoration: "none",
-            lineHeight: "24px",
-            wordBreak: "break-word",
-          }}
-        >
-          {value}
-        </Link>
-      ) : (
-        <Text
-          style={{
-            margin: 0,
-            fontSize: "16px",
-            fontWeight: 600,
-            color: emailTheme.text,
-            lineHeight: "24px",
-            wordBreak: "break-word",
-          }}
-        >
-          {value}
-        </Text>
-      )}
+    <Section style={{ marginBottom: isLast ? 0 : "20px" }}>
+      <Row>
+        <Column style={{ width: "48px", verticalAlign: "top" }}>
+          <EmailIcon name={icon} />
+        </Column>
+        <Column style={{ verticalAlign: "top", paddingLeft: "4px" }}>
+          <Text
+            style={{
+              margin: "0 0 2px",
+              fontSize: "12px",
+              fontWeight: 500,
+              color: emailTheme.textMuted,
+              lineHeight: "16px",
+            }}
+          >
+            {label}
+          </Text>
+          {href ? (
+            <Link
+              href={href}
+              style={{
+                margin: 0,
+                fontSize: "16px",
+                fontWeight: 500,
+                color: emailTheme.primary,
+                textDecoration: "none",
+                lineHeight: "24px",
+                wordBreak: "break-word",
+              }}
+            >
+              {value}
+            </Link>
+          ) : (
+            <Text
+              style={{
+                margin: 0,
+                fontSize: "16px",
+                fontWeight: 500,
+                color: emailTheme.text,
+                lineHeight: "24px",
+                wordBreak: "break-word",
+              }}
+            >
+              {value}
+            </Text>
+          )}
+        </Column>
+      </Row>
     </Section>
   );
 }
