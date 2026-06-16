@@ -3,12 +3,28 @@ import type { ContactApiError, ContactApiSuccess } from "@/lib/contact/types";
 import { buildSubmissionMeta } from "@/lib/contact/format-submission-meta";
 import { parseContactPayload } from "@/lib/contact/schema";
 import { sendContactEmail } from "@/lib/contact/send-contact-email";
+import { getClientIp } from "@/lib/http/client-ip";
+import {
+  CONTACT_RATE_LIMIT_ERROR,
+  enforceContactRateLimit,
+} from "@/lib/rate-limit/contact";
 
 export async function POST(request: Request) {
-  const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    request.headers.get("x-real-ip") ??
-    "unknown";
+  const ip = getClientIp(request);
+
+  const rateLimit = await enforceContactRateLimit(ip);
+  if (!rateLimit.allowed) {
+    const error: ContactApiError = {
+      ok: false,
+      error: CONTACT_RATE_LIMIT_ERROR,
+    };
+    return NextResponse.json<ContactApiError>(error, {
+      status: 429,
+      headers: {
+        "Retry-After": String(rateLimit.retryAfterSeconds),
+      },
+    });
+  }
 
   const userAgent = request.headers.get("user-agent") ?? "unknown";
 
@@ -52,4 +68,3 @@ export async function POST(request: Request) {
     return NextResponse.json<ContactApiError>(error, { status: 500 });
   }
 }
-
