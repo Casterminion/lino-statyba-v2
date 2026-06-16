@@ -1,13 +1,24 @@
 import { NextResponse } from "next/server";
 import type { ContactApiError, ContactApiSuccess } from "@/lib/contact/types";
 import { buildSubmissionMeta } from "@/lib/contact/format-submission-meta";
-import { parseContactPayload } from "@/lib/contact/schema";
+import { CONTACT_ERRORS, parseContactPayload } from "@/lib/contact/schema";
 import { sendContactEmail } from "@/lib/contact/send-contact-email";
 import { getClientIp } from "@/lib/http/client-ip";
 import {
   CONTACT_RATE_LIMIT_ERROR,
   enforceContactRateLimit,
 } from "@/lib/rate-limit/contact";
+import { verifyTurnstileToken } from "@/lib/turnstile/verify-turnstile";
+
+function readTurnstileToken(body: unknown): string {
+  if (typeof body !== "object" || body === null || Array.isArray(body)) {
+    return "";
+  }
+
+  const record = body as Record<string, unknown>;
+  const token = record.turnstileToken;
+  return typeof token === "string" ? token.trim() : "";
+}
 
 export async function POST(request: Request) {
   const ip = getClientIp(request);
@@ -52,6 +63,25 @@ export async function POST(request: Request) {
   if (parsed.data.website.trim()) {
     const success: ContactApiSuccess = { ok: true };
     return NextResponse.json<ContactApiSuccess>(success, { status: 200 });
+  }
+
+  const turnstileToken = readTurnstileToken(body);
+
+  if (!turnstileToken) {
+    const error: ContactApiError = {
+      ok: false,
+      error: CONTACT_ERRORS.turnstile,
+    };
+    return NextResponse.json<ContactApiError>(error, { status: 400 });
+  }
+
+  const turnstile = await verifyTurnstileToken(turnstileToken, ip);
+  if (!turnstile.ok) {
+    const error: ContactApiError = {
+      ok: false,
+      error: CONTACT_ERRORS.turnstile,
+    };
+    return NextResponse.json<ContactApiError>(error, { status: 403 });
   }
 
   const meta = buildSubmissionMeta(ip, userAgent);

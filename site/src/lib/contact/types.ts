@@ -6,6 +6,10 @@ export type ContactFormPayload = {
   website: string;
 };
 
+export type ContactFormRequest = ContactFormPayload & {
+  turnstileToken: string;
+};
+
 export type ContactSubmissionMeta = {
   submittedAt: string;
   submittedAtFormatted: string;

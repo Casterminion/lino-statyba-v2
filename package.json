@@ -6,7 +6,8 @@
     "dev": "npm run dev --prefix site",
     "build": "npm run build --prefix site",
     "start": "npm run start:next --prefix site",
-    "lint": "npm run lint --prefix site"
+    "lint": "npm run lint --prefix site",
+    "verify:rate-limit:prod": "npm run verify:rate-limit:prod --prefix site"
   },
   "dependencies": {
     "vercel": "^54.14.0"

@@ -1,11 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState, type FormEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+} from "react";
+import { TurnstileField, type TurnstileFieldHandle } from "@/components/contact/TurnstileField";
 import { getHomeFooter } from "@/lib/content/home";
 import { cn } from "@/lib/cn";
 import { setOverlayOpen } from "@/lib/overlay-open";
-import type { ContactApiError, ContactApiSuccess, ContactFormPayload, ContactFormStatus } from "@/lib/contact/types";
+import type {
+  ContactApiError,
+  ContactApiSuccess,
+  ContactFormRequest,
+  ContactFormStatus,
+} from "@/lib/contact/types";
+import { getTurnstileSiteKey } from "@/lib/turnstile/config";
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -19,6 +32,106 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const footer = getHomeFooter();
   const [status, setStatus] = useState<ContactFormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileFieldHandle>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const pendingPayloadRef = useRef<Omit<ContactFormRequest, "turnstileToken"> | null>(
+    null,
+  );
+  const turnstileConfigured = Boolean(getTurnstileSiteKey());
+
+  const submitContactRequest = useCallback(
+    async (payload: ContactFormRequest, form: HTMLFormElement) => {
+      setStatus("loading");
+      setErrorMessage(null);
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        let json: unknown = null;
+        try {
+          json = await res.json();
+        } catch {
+          json = null;
+        }
+
+        const isSuccess = (value: unknown): value is ContactApiSuccess => {
+          return (
+            typeof value === "object" &&
+            value !== null &&
+            (value as ContactApiSuccess).ok === true
+          );
+        };
+
+        const isError = (value: unknown): value is ContactApiError => {
+          return (
+            typeof value === "object" &&
+            value !== null &&
+            (value as ContactApiError).ok === false
+          );
+        };
+
+        if (res.ok && isSuccess(json)) {
+          setStatus("success");
+          setErrorMessage(null);
+          form.reset();
+          turnstileRef.current?.reset();
+          return;
+        }
+
+        const serverError = isError(json) ? json.error : null;
+        setStatus("error");
+        setErrorMessage(
+          serverError ??
+            "Nepavyko išsiųsti užklausos. Bandykite dar kartą vėliau.",
+        );
+        turnstileRef.current?.reset();
+      } catch {
+        setStatus("error");
+        setErrorMessage(
+          "Nepavyko išsiųsti užklausos. Patikrinkite interneto ryšį ir bandykite dar kartą.",
+        );
+        turnstileRef.current?.reset();
+      } finally {
+        pendingPayloadRef.current = null;
+      }
+    },
+    [],
+  );
+
+  const handleTurnstileSuccess = useCallback(
+    (token: string) => {
+      const pending = pendingPayloadRef.current;
+      const form = formRef.current;
+
+      if (!pending || !form) {
+        setStatus("error");
+        setErrorMessage(
+          "Nepavyko išsiųsti užklausos. Bandykite dar kartą vėliau.",
+        );
+        turnstileRef.current?.reset();
+        pendingPayloadRef.current = null;
+        return;
+      }
+
+      void submitContactRequest({ ...pending, turnstileToken: token }, form);
+    },
+    [submitContactRequest],
+  );
+
+  const handleTurnstileFailure = useCallback(() => {
+    pendingPayloadRef.current = null;
+    setStatus("error");
+    setErrorMessage(
+      "Nepavyko patvirtinti, kad esate žmogus. Bandykite dar kartą.",
+    );
+    turnstileRef.current?.reset();
+  }, []);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -47,8 +160,17 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!turnstileConfigured) {
+      setStatus("error");
+      setErrorMessage(
+        "Forma laikinai nepasiekiama. Bandykite dar kartą vėliau.",
+      );
+      return;
+    }
+
     const form = e.currentTarget;
     const formData = new FormData(form);
 
@@ -58,7 +180,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     const zinuteRaw = String(formData.get("zinute") ?? "").trim();
     const website = String(formData.get("website") ?? "").trim();
 
-    const payload: ContactFormPayload = {
+    pendingPayloadRef.current = {
       vardas,
       telefonas,
       website,
@@ -68,50 +190,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
     setStatus("loading");
     setErrorMessage(null);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-
-      let json: unknown = null;
-      try {
-        json = await res.json();
-      } catch {
-        json = null;
-      }
-
-      const isSuccess = (value: unknown): value is ContactApiSuccess => {
-        return typeof value === "object" && value !== null && (value as ContactApiSuccess).ok === true;
-      };
-
-      const isError = (value: unknown): value is ContactApiError => {
-        return typeof value === "object" && value !== null && (value as ContactApiError).ok === false;
-      };
-
-      if (res.ok && isSuccess(json)) {
-        setStatus("success");
-        setErrorMessage(null);
-        form.reset();
-        return;
-      }
-
-      const serverError = isError(json) ? json.error : null;
-      setStatus("error");
-      setErrorMessage(
-        serverError ??
-          "Nepavyko išsiųsti užklausos. Bandykite dar kartą vėliau.",
-      );
-    } catch {
-      setStatus("error");
-      setErrorMessage(
-        "Nepavyko išsiųsti užklausos. Patikrinkite interneto ryšį ir bandykite dar kartą.",
-      );
-    }
+    turnstileRef.current?.execute();
   };
 
   return (
@@ -152,6 +231,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         </div>
 
         <form
+          ref={formRef}
           className="flex flex-col gap-5 px-6 py-6 wide:px-8 wide:py-7 desktop:px-8 desktop:py-7"
           onSubmit={handleSubmit}
         >
@@ -238,6 +318,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           ) : null}
 
           <div className="flex flex-col gap-2">
+            <TurnstileField
+              ref={turnstileRef}
+              onSuccess={handleTurnstileSuccess}
+              onError={handleTurnstileFailure}
+              onExpire={handleTurnstileFailure}
+            />
             <button
               type="submit"
               disabled={status === "loading" || status === "success"}

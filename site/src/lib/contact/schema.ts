@@ -19,6 +19,7 @@ export const CONTACT_ERRORS = {
   elpastasLength: "El. pašto adresas per ilgas.",
   zinute: "Žinutė per ilga (daugiausia 2000 simbolių).",
   generic: "Neteisingi duomenys.",
+  turnstile: "Nepavyko patvirtinti, kad esate žmogus. Bandykite dar kartą.",
 } as const;
 
 function isRecord(value: unknown): value is Record<string, unknown> {

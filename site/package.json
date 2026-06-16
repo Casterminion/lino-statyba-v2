@@ -17,9 +17,11 @@
     "start:next": "next start",
     "lint": "eslint",
     "test:rate-limit": "node scripts/test-contact-rate-limit.mjs",
+    "test:turnstile": "node scripts/test-contact-turnstile.mjs",
     "verify:rate-limit:prod": "node scripts/verify-production-rate-limit.mjs"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^1.5.3",
     "@react-email/components": "^1.0.12",
     "@react-email/render": "^2.0.8",
     "@tailwindcss/postcss": "^4",
