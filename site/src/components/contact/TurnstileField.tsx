@@ -38,6 +38,7 @@ export const TurnstileField = forwardRef<TurnstileFieldHandle, TurnstileFieldPro
         ref={widgetRef}
         siteKey={siteKey}
         options={{
+          execution: "execute",
           size: "invisible",
           action: "contact",
         }}
