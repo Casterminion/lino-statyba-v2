@@ -8,6 +8,10 @@ import {
   useState,
   type FormEvent,
 } from "react";
+import {
+  ContactSuccessView,
+  type ContactSubmittedSummary,
+} from "@/components/contact/ContactSuccessView";
 import { TurnstileField, type TurnstileFieldHandle } from "@/components/contact/TurnstileField";
 import { CONTACT_ERRORS } from "@/lib/contact/schema";
 import { getHomeFooter } from "@/lib/content/home";
@@ -29,10 +33,24 @@ type ContactModalProps = {
 const inputClassName =
   "h-[50px] w-full rounded-lg border border-primary/10 bg-white px-4 font-body text-[15px] text-primary outline-none transition-all duration-200 placeholder:text-primary/28 focus:border-secondary focus:ring-2 focus:ring-secondary/30";
 
+function toSubmittedSummary(
+  payload: Omit<ContactFormRequest, "turnstileToken">,
+): ContactSubmittedSummary {
+  return {
+    vardas: payload.vardas,
+    telefonas: payload.telefonas,
+    ...(payload.elpastas ? { elpastas: payload.elpastas } : {}),
+    ...(payload.zinute ? { zinute: payload.zinute } : {}),
+  };
+}
+
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const footer = getHomeFooter();
   const [status, setStatus] = useState<ContactFormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [submittedData, setSubmittedData] = useState<ContactSubmittedSummary | null>(
+    null,
+  );
   const turnstileRef = useRef<TurnstileFieldHandle>(null);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileConfigured = Boolean(getTurnstileSiteKey());
@@ -79,10 +97,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         };
 
         if (res.ok && isSuccess(json)) {
+          setSubmittedData(toSubmittedSummary(payload));
           setStatus("success");
           setErrorMessage(null);
           form.reset();
-          turnstileRef.current?.reset();
           return;
         }
 
@@ -116,6 +134,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     if (!isOpen) {
       setStatus("idle");
       setErrorMessage(null);
+      setSubmittedData(null);
       setTurnstileToken(null);
       return;
     }
@@ -134,11 +153,10 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   if (!isOpen) return null;
 
+  const showSuccess = status === "success" && submittedData !== null;
+
   const submitDisabled =
-    status === "loading" ||
-    status === "success" ||
-    !turnstileConfigured ||
-    !turnstileToken;
+    status === "loading" || !turnstileConfigured || !turnstileToken;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -182,7 +200,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       className="fixed inset-0 z-overlay overflow-y-auto overscroll-y-contain bg-[#0f1a30]/75 p-4"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="contact-modal-title"
+      aria-labelledby={showSuccess ? "contact-success-title" : "contact-modal-title"}
       onClick={onClose}
     >
       <button
@@ -199,137 +217,141 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
           className="relative my-auto w-full max-w-[600px] rounded-2xl bg-[#faf9f7] shadow-[0_24px_64px_rgba(19,33,60,0.28)]"
           onClick={(e) => e.stopPropagation()}
         >
-        <div className="border-b border-primary/8 px-6 pt-7 pb-7 wide:px-8 desktop:px-8">
-          <p className="font-body text-[11px] font-semibold tracking-[0.14em] text-primary/45 uppercase">
-            Susisiekite
-          </p>
-          <h2
-            id="contact-modal-title"
-            className="mt-2.5 font-body text-[26px] font-semibold leading-[1.2] tracking-[-0.025em] text-primary wide:text-[28px] desktop:text-[28px]"
-          >
-            Gauti pasiūlymą
-          </h2>
-          <p className="mt-2 max-w-[440px] font-body text-[14px] leading-[1.55] text-primary/55">
-            Palikite kontaktus ir susisieksime su jumis per 1 darbo dieną.
-          </p>
-        </div>
+          {showSuccess ? (
+            <ContactSuccessView data={submittedData} onClose={onClose} />
+          ) : (
+            <>
+              <div className="border-b border-primary/8 px-6 pt-7 pb-7 wide:px-8 desktop:px-8">
+                <p className="font-body text-[11px] font-semibold tracking-[0.14em] text-primary/45 uppercase">
+                  Susisiekite
+                </p>
+                <h2
+                  id="contact-modal-title"
+                  className="mt-2.5 font-body text-[26px] font-semibold leading-[1.2] tracking-[-0.025em] text-primary wide:text-[28px] desktop:text-[28px]"
+                >
+                  Gauti pasiūlymą
+                </h2>
+                <p className="mt-2 max-w-[440px] font-body text-[14px] leading-[1.55] text-primary/55">
+                  Palikite kontaktus ir susisieksime su jumis per 1 darbo dieną.
+                </p>
+              </div>
 
-        <div className="px-6 py-6 wide:px-8 wide:py-7 desktop:px-8 desktop:py-7">
-        <form
-          id="contact-modal-form"
-          className="flex flex-col gap-5"
-          onSubmit={handleSubmit}
-        >
-          <input
-            type="text"
-            name="website"
-            tabIndex={-1}
-            autoComplete="off"
-            aria-hidden="true"
-            className="absolute -left-[9999px] h-0 w-0 opacity-0"
-            disabled={status === "loading"}
-          />
+              <div className="px-6 py-6 wide:px-8 wide:py-7 desktop:px-8 desktop:py-7">
+                <form
+                  id="contact-modal-form"
+                  className="flex flex-col gap-5"
+                  onSubmit={handleSubmit}
+                >
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                    disabled={status === "loading"}
+                  />
 
-          {status === "error" && errorMessage ? (
-            <p
-              role="alert"
-              className="rounded-lg border border-red-300/50 bg-red-50 px-4 py-3 font-body text-[14px] text-red-800"
-            >
-              {errorMessage}
-            </p>
-          ) : null}
+                  {status === "error" && errorMessage ? (
+                    <p
+                      role="alert"
+                      className="rounded-lg border border-red-300/50 bg-red-50 px-4 py-3 font-body text-[14px] text-red-800"
+                    >
+                      {errorMessage}
+                    </p>
+                  ) : null}
 
-          <label className="flex flex-col gap-1.5">
-            <span className="font-body text-[13px] font-medium text-primary">
-              Vardas <span className="text-primary/45">*</span>
-            </span>
-            <input
-              name="vardas"
-              type="text"
-              required
-              autoComplete="name"
-              className={inputClassName}
-              placeholder="Jūsų vardas"
-              disabled={status === "loading"}
-            />
-          </label>
+                  <label className="flex flex-col gap-1.5">
+                    <span className="font-body text-[13px] font-medium text-primary">
+                      Vardas <span className="text-primary/45">*</span>
+                    </span>
+                    <input
+                      name="vardas"
+                      type="text"
+                      required
+                      autoComplete="name"
+                      className={inputClassName}
+                      placeholder="Jūsų vardas"
+                      disabled={status === "loading"}
+                    />
+                  </label>
 
-          <label className="flex flex-col gap-1.5">
-            <span className="font-body text-[13px] font-medium text-primary">
-              Telefonas <span className="text-primary/45">*</span>
-            </span>
-            <input
-              name="telefonas"
-              type="tel"
-              required
-              autoComplete="tel"
-              defaultValue="+370 "
-              className={inputClassName}
-              placeholder="6XX XXXXX"
-              disabled={status === "loading"}
-            />
-          </label>
+                  <label className="flex flex-col gap-1.5">
+                    <span className="font-body text-[13px] font-medium text-primary">
+                      Telefonas <span className="text-primary/45">*</span>
+                    </span>
+                    <input
+                      name="telefonas"
+                      type="tel"
+                      required
+                      autoComplete="tel"
+                      defaultValue="+370 "
+                      className={inputClassName}
+                      placeholder="6XX XXXXX"
+                      disabled={status === "loading"}
+                    />
+                  </label>
 
-          <label className="flex flex-col gap-1.5">
-            <span className="font-body text-[13px] font-medium text-primary">El. paštas</span>
-            <input
-              name="elpastas"
-              type="email"
-              autoComplete="email"
-              className={inputClassName}
-              placeholder="vardas@pastas.lt"
-              disabled={status === "loading"}
-            />
-          </label>
+                  <label className="flex flex-col gap-1.5">
+                    <span className="font-body text-[13px] font-medium text-primary">
+                      El. paštas
+                    </span>
+                    <input
+                      name="elpastas"
+                      type="email"
+                      autoComplete="email"
+                      className={inputClassName}
+                      placeholder="vardas@pastas.lt"
+                      disabled={status === "loading"}
+                    />
+                  </label>
 
-          <label className="flex flex-col gap-1.5">
-            <span className="font-body text-[13px] font-medium text-primary">Žinutė</span>
-            <textarea
-              name="zinute"
-              rows={3}
-              className={cn(
-                inputClassName,
-                "h-auto min-h-[96px] resize-y py-3.5",
-              )}
-              placeholder="Trumpai aprašykite, kuo galime padėti..."
-              disabled={status === "loading"}
-            />
-          </label>
+                  <label className="flex flex-col gap-1.5">
+                    <span className="font-body text-[13px] font-medium text-primary">
+                      Žinutė
+                    </span>
+                    <textarea
+                      name="zinute"
+                      rows={3}
+                      className={cn(
+                        inputClassName,
+                        "h-auto min-h-[96px] resize-y py-3.5",
+                      )}
+                      placeholder="Trumpai aprašykite, kuo galime padėti..."
+                      disabled={status === "loading"}
+                    />
+                  </label>
+                </form>
 
-          {status === "success" ? (
-            <p className="rounded-lg border border-secondary/30 bg-secondary/10 px-4 py-3 font-body text-[14px] text-primary">
-              Ačiū! Jūsų užklausa išsiųsta. Susisieksime per 1 darbo dieną.
-            </p>
-          ) : null}
-        </form>
-
-          <div className="mt-5 flex flex-col gap-2">
-            <TurnstileField
-              ref={turnstileRef}
-              onToken={setTurnstileToken}
-              onClear={handleTurnstileClear}
-            />
-            <button
-              type="submit"
-              form="contact-modal-form"
-              disabled={submitDisabled}
-              aria-busy={status === "loading"}
-              className="inline-flex h-[52px] w-full items-center justify-center rounded-lg bg-secondary font-body text-[16px] font-semibold tracking-[-0.01em] text-primary transition-all duration-200 hover:bg-[#e8b05e] active:scale-[0.985] active:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {status === "loading" ? "Siunčiama..." : "Gauti pasiūlymą"}
-            </button>
-            <p className="text-center font-body text-[12px] leading-snug text-primary/35">
-              Išsiųsdami formą sutinkate su{" "}
-              <Link
-                href={footer.privacyHref}
-                className="text-primary/40 underline-offset-2 transition-colors hover:text-primary/50 hover:underline"
-              >
-                privatumo politika
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
+                <div className="mt-5 flex flex-col gap-2">
+                  <TurnstileField
+                    ref={turnstileRef}
+                    onToken={setTurnstileToken}
+                    onClear={handleTurnstileClear}
+                  />
+                  <button
+                    type="submit"
+                    form="contact-modal-form"
+                    disabled={submitDisabled}
+                    aria-busy={status === "loading"}
+                    className="inline-flex h-[52px] w-full items-center justify-center rounded-lg bg-secondary font-body text-[16px] font-semibold tracking-[-0.01em] text-primary transition-all duration-200 hover:bg-[#e8b05e] active:scale-[0.985] active:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {status === "loading" ? "Siunčiama..." : "Gauti pasiūlymą"}
+                  </button>
+                  <p className="text-center font-body text-[12px] leading-snug text-primary/35">
+                    Išsiųsdami formą sutinkate su{" "}
+                    <Link
+                      href={footer.privacyHref}
+                      className="text-primary/40 underline-offset-2 transition-colors hover:text-primary/50 hover:underline"
+                    >
+                      privatumo politika
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
